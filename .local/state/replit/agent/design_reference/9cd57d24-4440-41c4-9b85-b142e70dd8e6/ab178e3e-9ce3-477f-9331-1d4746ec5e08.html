@@ -1,0 +1,599 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasika Desserts - Where Tradition Meets Royal Indulgence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-green': '#013220',
+                        'gold': '#FFD700',
+                        'cream': '#FFF8E1'
+                    },
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'montserrat': ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="font-montserrat bg-cream">
+    <!-- @COMPONENT: Hero Section -->
+    <section class="relative bg-dark-green min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-dark-green via-dark-green/90 to-gold/20"></div>
+        
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <!-- Logo Container -->
+            <div class="mb-8">
+                <!-- IMPLEMENTATION NOTE: Replace with uploaded Logo_1755379876328.jpeg -->
+                <div class="w-48 h-48 mx-auto mb-6 bg-gold/20 rounded-full flex items-center justify-center border-2 border-gold" data-mock-image="true" data-implementation="Use Logo_1755379876328.jpeg here">
+                    <span class="text-gold font-playfair text-2xl font-bold">RASIKA</span>
+                </div>
+            </div>
+            
+            <!-- Tagline -->
+            <h1 class="font-playfair text-4xl md:text-6xl font-bold text-white mb-4">
+                Where Tradition Meets
+            </h1>
+            <h2 class="font-playfair text-3xl md:text-5xl font-bold text-gold mb-8">
+                Royal Indulgence
+            </h2>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
+                <button class="bg-gold hover:bg-yellow-500 text-dark-green font-montserrat font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg min-w-48" data-event="click:openSwiggy">
+                    <i class="fas fa-motorcycle mr-2"></i>
+                    Order on Swiggy
+                </button>
+                <button class="bg-transparent border-2 border-gold text-gold hover:bg-gold hover:text-dark-green font-montserrat font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 min-w-48" data-event="click:openZomato">
+                    <i class="fas fa-utensils mr-2"></i>
+                    Order on Zomato
+                </button>
+            </div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute top-10 left-10 w-20 h-20 border border-gold/30 rounded-full"></div>
+        <div class="absolute bottom-10 right-10 w-16 h-16 border border-gold/30 rounded-full"></div>
+        <div class="absolute top-1/2 left-5 w-2 h-2 bg-gold rounded-full animate-pulse"></div>
+        <div class="absolute top-1/3 right-20 w-3 h-3 bg-gold rounded-full animate-pulse"></div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Product Showcase -->
+    <section class="py-16 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-dark-green mb-4">
+                    Our Royal Collection
+                </h2>
+                <p class="font-montserrat text-lg text-gray-600 max-w-2xl mx-auto">
+                    Handcrafted desserts made with the finest ingredients, bringing you moments of pure indulgence
+                </p>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: products.map(product => ( -->
+                
+                <!-- Product Card 1: Rose Milk -->
+                <div class="bg-cream rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <!-- IMPLEMENTATION NOTE: Replace with uploaded Rose milk_1755379876329.jpeg -->
+                    <div class="h-64 bg-gradient-to-br from-pink-100 to-rose-200 relative" data-mock-image="true" data-implementation="Use Rose milk_1755379876329.jpeg here">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-gold text-dark-green px-3 py-1 rounded-full text-sm font-semibold">20% OFF</span>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-gray-500">Rose Milk Image</span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="font-playfair text-2xl font-bold text-dark-green mb-2">Rose Milk Delight</h3>
+                        <p class="text-gray-600 mb-4">Aromatic rose-flavored milk dessert with a royal touch</p>
+                        
+                        <!-- Size Options -->
+                        <div class="space-y-2 mb-4">
+                            <div class="flex gap-2">
+                                <button class="flex-1 border-2 border-dark-green text-dark-green hover:bg-dark-green hover:text-white px-4 py-2 rounded-lg transition-all duration-300 text-sm font-semibold" data-event="click:selectSize" data-size="small">
+                                    Small - ₹120
+                                </button>
+                                <button class="flex-1 border-2 border-dark-green text-dark-green hover:bg-dark-green hover:text-white px-4 py-2 rounded-lg transition-all duration-300 text-sm font-semibold" data-event="click:selectSize" data-size="medium">
+                                    Medium - ₹200
+                                </button>
+                            </div>
+                            <button class="w-full border-2 border-dark-green text-dark-green hover:bg-dark-green hover:text-white px-4 py-2 rounded-lg transition-all duration-300 text-sm font-semibold" data-event="click:selectSize" data-size="large">
+                                Large - ₹350
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2: Combo -->
+                <div class="bg-cream rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <!-- IMPLEMENTATION NOTE: Replace with uploaded combo_1755379876329.jpeg -->
+                    <div class="h-64 bg-gradient-to-br from-orange-100 to-yellow-200 relative" data-mock-image="true" data-implementation="Use combo_1755379876329.jpeg here">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">BESTSELLER</span>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-gray-500">Combo Image</span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="font-playfair text-2xl font-bold text-dark-green mb-2">Royal Combo</h3>
+                        <p class="text-gray-600 mb-4">Perfect blend of our signature desserts in one box</p>
+                        
+                        <!-- Size Options -->
+                        <div class="space-y-2 mb-4">
+                            <div class="flex gap-2">
+                                <button class="flex-1 border-2 border-dark-green text-dark-green hover:bg-dark-green hover:text-white px-4 py-2 rounded-lg transition-all duration-300 text-sm font-semibold" data-event="click:selectSize" data-size="small">
+                                    Small - ₹120
+                                </button>
+                                <button class="flex-1 border-2 border-dark-green text-dark-green hover:bg-dark-green hover:text-white px-4 py-2 rounded-lg transition-all duration-300 text-sm font-semibold" data-event="click:selectSize" data-size="medium">
+                                    Medium - ₹200
+                                </button>
+                            </div>
+                            <button class="w-full border-2 border-dark-green text-dark-green hover:bg-dark-green hover:text-white px-4 py-2 rounded-lg transition-all duration-300 text-sm font-semibold" data-event="click:selectSize" data-size="large">
+                                Large - ₹350
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3: Apricot Delight Small -->
+                <div class="bg-cream rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <!-- IMPLEMENTATION NOTE: Replace with uploaded Apricot delight small_1755379876330.jpeg -->
+                    <div class="h-64 bg-gradient-to-br from-orange-100 to-amber-200 relative" data-mock-image="true" data-implementation="Use Apricot delight small_1755379876330.jpeg here">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-gold text-dark-green px-3 py-1 rounded-full text-sm font-semibold">NEW</span>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-gray-500">Apricot Delight Small</span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="font-playfair text-2xl font-bold text-dark-green mb-2">Apricot Delight</h3>
+                        <p class="text-gray-600 mb-4">Luscious apricot flavored dessert with rich texture</p>
+                        
+                        <!-- Size Options -->
+                        <div class="space-y-2 mb-4">
+                            <div class="flex gap-2">
+                                <button class="flex-1 border-2 border-dark-green text-dark-green hover:bg-dark-green hover:text-white px-4 py-2 rounded-lg transition-all duration-300 text-sm font-semibold" data-event="click:selectSize" data-size="small">
+                                    Small - ₹120
+                                </button>
+                                <button class="flex-1 border-2 border-dark-green text-dark-green hover:bg-dark-green hover:text-white px-4 py-2 rounded-lg transition-all duration-300 text-sm font-semibold" data-event="click:selectSize" data-size="medium">
+                                    Medium - ₹200
+                                </button>
+                            </div>
+                            <button class="w-full border-2 border-dark-green text-dark-green hover:bg-dark-green hover:text-white px-4 py-2 rounded-lg transition-all duration-300 text-sm font-semibold" data-event="click:selectSize" data-size="large">
+                                Large - ₹350
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4: Apricot Delight Large -->
+                <div class="bg-cream rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <!-- IMPLEMENTATION NOTE: Replace with uploaded Apricot delight large_1755379876330.jpeg -->
+                    <div class="h-64 bg-gradient-to-br from-orange-200 to-amber-300 relative" data-mock-image="true" data-implementation="Use Apricot delight large_1755379876330.jpeg here">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-gray-500 text-white px-3 py-1 rounded-full text-sm font-semibold">OUT OF STOCK</span>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-gray-500">Apricot Delight Large</span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 opacity-75">
+                        <h3 class="font-playfair text-2xl font-bold text-dark-green mb-2">Apricot Delight (Large)</h3>
+                        <p class="text-gray-600 mb-4">Premium large portion for special occasions</p>
+                        
+                        <!-- Size Options - Disabled -->
+                        <div class="space-y-2 mb-4">
+                            <div class="flex gap-2">
+                                <button disabled class="flex-1 border-2 border-gray-300 text-gray-400 px-4 py-2 rounded-lg text-sm font-semibold cursor-not-allowed">
+                                    Small - ₹120
+                                </button>
+                                <button disabled class="flex-1 border-2 border-gray-300 text-gray-400 px-4 py-2 rounded-lg text-sm font-semibold cursor-not-allowed">
+                                    Medium - ₹200
+                                </button>
+                            </div>
+                            <button disabled class="w-full border-2 border-gray-300 text-gray-400 px-4 py-2 rounded-lg text-sm font-semibold cursor-not-allowed">
+                                Large - ₹350
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 5: Apricot Delight Regular -->
+                <div class="bg-cream rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <!-- IMPLEMENTATION NOTE: Replace with uploaded Apricot delight_1755379876331.jpeg -->
+                    <div class="h-64 bg-gradient-to-br from-amber-100 to-orange-200 relative" data-mock-image="true" data-implementation="Use Apricot delight_1755379876331.jpeg here">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">AVAILABLE</span>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-gray-500">Apricot Delight Regular</span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="font-playfair text-2xl font-bold text-dark-green mb-2">Apricot Delight (Regular)</h3>
+                        <p class="text-gray-600 mb-4">Classic apricot dessert with traditional recipe</p>
+                        
+                        <!-- Size Options -->
+                        <div class="space-y-2 mb-4">
+                            <div class="flex gap-2">
+                                <button class="flex-1 border-2 border-dark-green text-dark-green hover:bg-dark-green hover:text-white px-4 py-2 rounded-lg transition-all duration-300 text-sm font-semibold" data-event="click:selectSize" data-size="small">
+                                    Small - ₹120
+                                </button>
+                                <button class="flex-1 border-2 border-dark-green text-dark-green hover:bg-dark-green hover:text-white px-4 py-2 rounded-lg transition-all duration-300 text-sm font-semibold" data-event="click:selectSize" data-size="medium">
+                                    Medium - ₹200
+                                </button>
+                            </div>
+                            <button class="w-full border-2 border-dark-green text-dark-green hover:bg-dark-green hover:text-white px-4 py-2 rounded-lg transition-all duration-300 text-sm font-semibold" data-event="click:selectSize" data-size="large">
+                                Large - ₹350
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Product Showcase -->
+
+    <!-- @COMPONENT: Party Orders Form -->
+    <section class="py-16 px-6 bg-dark-green">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-white mb-4">
+                    Planning a Celebration?
+                </h2>
+                <p class="font-playfair text-2xl text-gold mb-2">
+                    We Cater Too!
+                </p>
+                <p class="font-montserrat text-lg text-gray-300 max-w-2xl mx-auto">
+                    Let us make your special moments even more memorable with our exquisite dessert collection
+                </p>
+            </div>
+
+            <div class="bg-cream rounded-2xl p-8 shadow-2xl">
+                <form class="space-y-6" data-event="submit:handlePartyOrder">
+                    <!-- @STATE: formData:object = {} -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Name Field -->
+                        <div>
+                            <label class="block text-dark-green font-semibold mb-2" for="name">
+                                Name <span class="text-red-500">*</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name"
+                                required
+                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gold focus:outline-none transition-colors"
+                                placeholder="Your full name"
+                                data-bind="formData.name"
+                            />
+                        </div>
+
+                        <!-- Contact Number -->
+                        <div>
+                            <label class="block text-dark-green font-semibold mb-2" for="phone">
+                                Contact Number <span class="text-red-500">*</span>
+                            </label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone"
+                                required
+                                pattern="[0-9]{10}"
+                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gold focus:outline-none transition-colors"
+                                placeholder="10-digit mobile number"
+                                data-bind="formData.phone"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Delivery Address -->
+                    <div>
+                        <label class="block text-dark-green font-semibold mb-2" for="address">
+                            Delivery Address
+                        </label>
+                        <textarea 
+                            id="address" 
+                            name="address"
+                            rows="3"
+                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gold focus:outline-none transition-colors resize-none"
+                            placeholder="Complete delivery address"
+                            data-bind="formData.address"
+                        ></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Date -->
+                        <div>
+                            <label class="block text-dark-green font-semibold mb-2" for="date">
+                                Delivery Date <span class="text-red-500">*</span>
+                            </label>
+                            <input 
+                                type="date" 
+                                id="date" 
+                                name="date"
+                                required
+                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gold focus:outline-none transition-colors"
+                                data-bind="formData.date"
+                            />
+                        </div>
+
+                        <!-- Time -->
+                        <div>
+                            <label class="block text-dark-green font-semibold mb-2" for="time">
+                                Preferred Time <span class="text-red-500">*</span>
+                            </label>
+                            <input 
+                                type="time" 
+                                id="time" 
+                                name="time"
+                                required
+                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gold focus:outline-none transition-colors"
+                                data-bind="formData.time"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Product Selection -->
+                    <div>
+                        <label class="block text-dark-green font-semibold mb-3">
+                            Products Needed <span class="text-red-500">*</span>
+                        </label>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="checkbox" name="products" value="rose-milk" class="w-5 h-5 text-gold" />
+                                <span class="text-dark-green">Rose Milk Delight</span>
+                            </label>
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="checkbox" name="products" value="combo" class="w-5 h-5 text-gold" />
+                                <span class="text-dark-green">Royal Combo</span>
+                            </label>
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="checkbox" name="products" value="apricot-small" class="w-5 h-5 text-gold" />
+                                <span class="text-dark-green">Apricot Delight (Small)</span>
+                            </label>
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="checkbox" name="products" value="apricot-regular" class="w-5 h-5 text-gold" />
+                                <span class="text-dark-green">Apricot Delight (Regular)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Quantity -->
+                    <div>
+                        <label class="block text-dark-green font-semibold mb-2" for="quantity">
+                            Total Quantity Required
+                        </label>
+                        <input 
+                            type="number" 
+                            id="quantity" 
+                            name="quantity"
+                            min="1"
+                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gold focus:outline-none transition-colors"
+                            placeholder="Number of pieces/boxes"
+                            data-bind="formData.quantity"
+                        />
+                    </div>
+
+                    <!-- Special Instructions -->
+                    <div>
+                        <label class="block text-dark-green font-semibold mb-2" for="instructions">
+                            Special Instructions (Optional)
+                        </label>
+                        <textarea 
+                            id="instructions" 
+                            name="instructions"
+                            rows="3"
+                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gold focus:outline-none transition-colors resize-none"
+                            placeholder="Any specific requirements or customizations"
+                            data-bind="formData.instructions"
+                        ></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                        <button 
+                            type="submit" 
+                            class="bg-dark-green hover:bg-green-800 text-white font-semibold px-12 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                            data-implementation="Should validate form before submission"
+                        >
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Order Request
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Success Message (Hidden by default) -->
+                <div id="success-message" class="hidden text-center mt-8 p-6 bg-green-100 border border-green-400 rounded-lg">
+                    <i class="fas fa-check-circle text-green-600 text-3xl mb-2"></i>
+                    <h3 class="font-playfair text-xl font-bold text-green-800 mb-2">Order Request Received!</h3>
+                    <p class="text-green-700">We've received your request! We'll confirm shortly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Party Orders Form -->
+
+    <!-- @COMPONENT: Sticky Ordering Buttons -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <button class="bg-orange-500 hover:bg-orange-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110" data-event="click:openSwiggy" title="Order on Swiggy">
+            <i class="fas fa-motorcycle text-xl"></i>
+        </button>
+        <button class="bg-red-500 hover:bg-red-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110" data-event="click:openZomato" title="Order on Zomato">
+            <i class="fas fa-utensils text-xl"></i>
+        </button>
+    </div>
+    <!-- @END_COMPONENT: Sticky Ordering Buttons -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-dark-green text-white py-12 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Brand -->
+                <div class="md:col-span-2">
+                    <h3 class="font-playfair text-2xl font-bold text-gold mb-4">Rasika Desserts</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Where tradition meets royal indulgence. Experience the finest desserts crafted with love, passion, and the highest quality ingredients.
+                    </p>
+                    <!-- Social Media -->
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gold hover:text-yellow-400 transition-colors text-xl" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gold hover:text-yellow-400 transition-colors text-xl" title="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gold hover:text-yellow-400 transition-colors text-xl" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-playfair text-lg font-bold text-gold mb-4">Contact Us</h4>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-gold"></i>
+                            <span data-mock="true">+91 98765 43210</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-gold"></i>
+                            <span data-mock="true">info@rasikadesserts.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-gold"></i>
+                            <span data-mock="true">Mumbai, Maharashtra</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-playfair text-lg font-bold text-gold mb-4">Quick Links</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <a href="#" class="block hover:text-gold transition-colors">Privacy Policy</a>
+                        <a href="#" class="block hover:text-gold transition-colors">Terms & Conditions</a>
+                        <a href="#" class="block hover:text-gold transition-colors">Return Policy</a>
+                        <a href="/admin" class="block hover:text-gold transition-colors">Admin Login</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Rasika Desserts. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // TODO: Implement business logic, API calls, and state management
+        
+        (function() {
+            // Form validation and submission
+            document.querySelector('form[data-event="submit:handlePartyOrder"]')?.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Basic validation
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                const date = document.getElementById('date').value;
+                const time = document.getElementById('time').value;
+                
+                if (!name || !phone || !date || !time) {
+                    alert('Please fill in all required fields');
+                    return;
+                }
+                
+                // Phone validation (basic)
+                const phoneRegex = /^[0-9]{10}$/;
+                if (!phoneRegex.test(phone)) {
+                    alert('Please enter a valid 10-digit phone number');
+                    return;
+                }
+                
+                // Date validation (cannot be in the past)
+                const selectedDate = new Date(date);
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                
+                if (selectedDate < today) {
+                    alert('Please select a future date');
+                    return;
+                }
+                
+                // Show success message
+                document.getElementById('success-message').classList.remove('hidden');
+                this.style.display = 'none';
+                
+                // TODO: Send data to WhatsApp API or Google Sheets
+                console.log('Form submitted successfully');
+            });
+            
+            // External app links
+            document.querySelectorAll('[data-event="click:openSwiggy"]').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // TODO: Implement Swiggy deep linking
+                    window.open('https://www.swiggy.com/', '_blank');
+                });
+            });
+            
+            document.querySelectorAll('[data-event="click:openZomato"]').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // TODO: Implement Zomato deep linking
+                    window.open('https://www.zomato.com/', '_blank');
+                });
+            });
+            
+            // Product size selection
+            document.querySelectorAll('[data-event="click:selectSize"]').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active state from siblings
+                    this.parentElement.parentElement.querySelectorAll('button').forEach(b => {
+                        b.classList.remove('bg-dark-green', 'text-white');
+                        b.classList.add('text-dark-green');
+                    });
+                    
+                    // Add active state to clicked button
+                    this.classList.add('bg-dark-green', 'text-white');
+                    this.classList.remove('text-dark-green');
+                    
+                    // TODO: Add to cart functionality
+                    console.log('Selected:', this.dataset.size);
+                });
+            });
+            
+            // Set minimum date to today
+            const dateInput = document.getElementById('date');
+            if (dateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.min = today;
+            }
+        })();
+    </script>
+</body>
+</html>

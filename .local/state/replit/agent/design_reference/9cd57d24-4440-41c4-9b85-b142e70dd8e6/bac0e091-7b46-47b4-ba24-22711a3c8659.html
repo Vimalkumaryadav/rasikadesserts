@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasika Desserts - Where Tradition Meets Royal Indulgence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'primary': '#013220',
+                    'gold': '#FFD700',
+                    'cream': '#FFF8E1',
+                    'dark-green': '#013220',
+                    'light-cream': '#FFFBF0'
+                },
+                fontFamily: {
+                    'playfair': ['Playfair Display', 'serif'],
+                    'montserrat': ['Montserrat', 'sans-serif']
+                }
+            }
+        }
+    };
+    </script>
+</head>
+<body class="font-montserrat bg-light-cream">
+    <!-- @COMPONENT: Hero Section -->
+    <section class="relative min-h-screen bg-gradient-to-br from-primary via-primary to-green-900 flex items-center justify-center overflow-hidden">
+        <!-- Decorative background elements -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+        <div class="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl transform translate-x-32 -translate-y-32"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-gold/3 rounded-full blur-3xl transform -translate-x-48 translate-y-48"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <!-- Logo placeholder - Replace with actual uploaded logo -->
+            <!-- UPLOADED LOGO: Logo_1755379876328.jpeg should replace this placeholder -->
+            <div class="mb-8 flex justify-center">
+                <div class="w-48 h-32 bg-gold/10 rounded-xl flex items-center justify-center border border-gold/20" data-implementation="Replace with uploaded Rasika logo">
+                    <span class="font-playfair text-3xl font-bold text-gold">RASIKA</span>
+                </div>
+            </div>
+            
+            <h1 class="font-playfair text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                Rasika Desserts
+            </h1>
+            <p class="font-playfair text-xl md:text-2xl text-gold mb-8 italic">
+                Where Tradition Meets Royal Indulgence
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
+                <button class="w-full sm:w-auto bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5" data-event="click:openSwiggy" data-implementation="Open Swiggy app on mobile, web link on desktop">
+                    <i class="fas fa-utensils"></i>
+                    Order on Swiggy
+                </button>
+                <button class="w-full sm:w-auto bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5" data-event="click:openZomato" data-implementation="Open Zomato app on mobile, web link on desktop">
+                    <i class="fas fa-motorcycle"></i>
+                    Order on Zomato
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Product Showcase -->
+    <section class="py-16 bg-light-cream">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-primary mb-4">Our Royal Collection</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Handcrafted desserts that celebrate the richness of tradition with modern elegance</p>
+            </div>
+            
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Rose Milk Product -->
+                <!-- @MAP: products.filter(p => p.category === 'signature').map(product => ( -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group transform hover:-translate-y-2" data-mock="true">
+                    <div class="relative overflow-hidden">
+                        <!-- UPLOADED IMAGE: Rose milk_1755379876329.jpeg should replace this placeholder -->
+                        <!-- A glass of creamy rose-colored milk dessert garnished with rose petals -->
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Rose Milk Dessert" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" data-mock-image="true" data-implementation="Use uploaded Rose milk image" />
+                        <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            20% OFF
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-playfair text-2xl font-bold text-primary mb-2" data-bind="product.name">Rose Milk Delight</h3>
+                        <p class="text-gray-600 mb-4" data-bind="product.description">A fragrant and creamy rose-infused milk dessert that captures the essence of royal Indian traditions</p>
+                        
+                        <!-- Size Options -->
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-gray-700 mb-2">Select Size:</p>
+                            <div class="flex gap-2 flex-wrap">
+                                <button class="bg-cream hover:bg-gold hover:text-primary text-gray-700 px-4 py-2 rounded-lg border border-gray-200 transition-all duration-200 font-medium" data-event="click:selectSize" data-price="120">
+                                    Small - ₹120
+                                </button>
+                                <button class="bg-cream hover:bg-gold hover:text-primary text-gray-700 px-4 py-2 rounded-lg border border-gray-200 transition-all duration-200 font-medium" data-event="click:selectSize" data-price="200">
+                                    Medium - ₹200
+                                </button>
+                                <button class="bg-cream hover:bg-gold hover:text-primary text-gray-700 px-4 py-2 rounded-lg border border-gray-200 transition-all duration-200 font-medium" data-event="click:selectSize" data-price="350">
+                                    Large - ₹350
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary font-bold text-lg">Starting from ₹120</span>
+                            <div class="flex items-center gap-1 text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <span class="text-gray-600 text-sm">4.8 (120+)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Combo Product -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group transform hover:-translate-y-2" data-mock="true">
+                    <div class="relative overflow-hidden">
+                        <!-- UPLOADED IMAGE: combo_1755379876329.jpeg should replace this placeholder -->
+                        <!-- An assorted platter of various Indian desserts beautifully arranged -->
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Dessert Combo" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" data-mock-image="true" data-implementation="Use uploaded combo image" />
+                        <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            POPULAR
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-playfair text-2xl font-bold text-primary mb-2" data-bind="product.name">Royal Combo Platter</h3>
+                        <p class="text-gray-600 mb-4" data-bind="product.description">A curated selection of our finest desserts perfect for celebrations and sharing moments</p>
+                        
+                        <!-- Size Options -->
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-gray-700 mb-2">Select Size:</p>
+                            <div class="flex gap-2 flex-wrap">
+                                <button class="bg-cream hover:bg-gold hover:text-primary text-gray-700 px-4 py-2 rounded-lg border border-gray-200 transition-all duration-200 font-medium" data-event="click:selectSize" data-price="300">
+                                    Small - ₹300
+                                </button>
+                                <button class="bg-cream hover:bg-gold hover:text-primary text-gray-700 px-4 py-2 rounded-lg border border-gray-200 transition-all duration-200 font-medium" data-event="click:selectSize" data-price="500">
+                                    Medium - ₹500
+                                </button>
+                                <button class="bg-cream hover:bg-gold hover:text-primary text-gray-700 px-4 py-2 rounded-lg border border-gray-200 transition-all duration-200 font-medium" data-event="click:selectSize" data-price="800">
+                                    Large - ₹800
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary font-bold text-lg">Starting from ₹300</span>
+                            <div class="flex items-center gap-1 text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <span class="text-gray-600 text-sm">4.9 (85+)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Apricot Delight Small -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group transform hover:-translate-y-2" data-mock="true">
+                    <div class="relative overflow-hidden">
+                        <!-- UPLOADED IMAGE: Apricot delight small_1755379876330.jpeg should replace this placeholder -->
+                        <!-- A small serving of apricot dessert with visible apricot pieces and cream -->
+                        <img src="https://pixabay.com/get/g84ed298845c8bb55c0ee97c0e032ca433a993fc2c16fb154eea6a685e03c865d1eb57f6d20a2902c39c01e14e507d773a63578f7ed2469687dba525606d0c084_1280.jpg" alt="Apricot Delight Small" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" data-mock-image="true" data-implementation="Use uploaded Apricot delight small image" />
+                        <div class="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            NEW
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-playfair text-2xl font-bold text-primary mb-2" data-bind="product.name">Apricot Delight</h3>
+                        <p class="text-gray-600 mb-4" data-bind="product.description">Rich and velvety apricot-based dessert with layers of cream and fresh fruit essence</p>
+                        
+                        <!-- Size Options -->
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-gray-700 mb-2">Select Size:</p>
+                            <div class="flex gap-2 flex-wrap">
+                                <button class="bg-gold text-primary px-4 py-2 rounded-lg border-2 border-gold font-medium" data-event="click:selectSize" data-price="120">
+                                    Small - ₹120
+                                </button>
+                                <button class="bg-cream hover:bg-gold hover:text-primary text-gray-700 px-4 py-2 rounded-lg border border-gray-200 transition-all duration-200 font-medium" data-event="click:selectSize" data-price="200">
+                                    Medium - ₹200
+                                </button>
+                                <button class="bg-cream hover:bg-gold hover:text-primary text-gray-700 px-4 py-2 rounded-lg border border-gray-200 transition-all duration-200 font-medium" data-event="click:selectSize" data-price="350">
+                                    Large - ₹350
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary font-bold text-lg">Starting from ₹120</span>
+                            <div class="flex items-center gap-1 text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <span class="text-gray-600 text-sm">4.7 (95+)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Apricot Delight Large -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group transform hover:-translate-y-2" data-mock="true">
+                    <div class="relative overflow-hidden">
+                        <!-- UPLOADED IMAGE: Apricot delight large_1755379876330.jpeg should replace this placeholder -->
+                        <!-- A large serving of apricot dessert with elaborate garnishing and presentation -->
+                        <img src="https://pixabay.com/get/g7894a9dac8a8ebec9562eff3b3206cf9b74210793dfe4ea6997c59cffeca776b5a4dcfa24956a3b58357167699443fb0d1ec2b36c8e9b5a7e5c5296cfecb4d96_1280.jpg" alt="Apricot Delight Large" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" data-mock-image="true" data-implementation="Use uploaded Apricot delight large image" />
+                        <div class="absolute top-4 left-4 bg-gold text-primary px-3 py-1 rounded-full text-sm font-semibold">
+                            PREMIUM
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-playfair text-2xl font-bold text-primary mb-2" data-bind="product.name">Apricot Delight Royal</h3>
+                        <p class="text-gray-600 mb-4" data-bind="product.description">Our signature large portion apricot dessert with premium ingredients and royal presentation</p>
+                        
+                        <!-- Size Options -->
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-gray-700 mb-2">Select Size:</p>
+                            <div class="flex gap-2 flex-wrap">
+                                <button class="bg-cream hover:bg-gold hover:text-primary text-gray-700 px-4 py-2 rounded-lg border border-gray-200 transition-all duration-200 font-medium" data-event="click:selectSize" data-price="120">
+                                    Small - ₹120
+                                </button>
+                                <button class="bg-cream hover:bg-gold hover:text-primary text-gray-700 px-4 py-2 rounded-lg border border-gray-200 transition-all duration-200 font-medium" data-event="click:selectSize" data-price="200">
+                                    Medium - ₹200
+                                </button>
+                                <button class="bg-gold text-primary px-4 py-2 rounded-lg border-2 border-gold font-medium" data-event="click:selectSize" data-price="350">
+                                    Large - ₹350
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary font-bold text-lg">Starting from ₹120</span>
+                            <div class="flex items-center gap-1 text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <span class="text-gray-600 text-sm">5.0 (150+)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Apricot Delight Special -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group transform hover:-translate-y-2" data-mock="true">
+                    <div class="relative overflow-hidden">
+                        <!-- UPLOADED IMAGE: Apricot delight_1755379876331.jpeg should replace this placeholder -->
+                        <!-- A special variant of apricot dessert with unique presentation -->
+                        <img src="https://pixabay.com/get/g4b273989458d64b9426eb32c1a5d2fdc6b1d0eb3d675a39155ba1c8c3e91f80b14129c617c62d1038da2cd9515ff66d751dd483686bcec03776ff6f906e8292f_1280.jpg" alt="Apricot Delight Special" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" data-mock-image="true" data-implementation="Use uploaded Apricot delight special image" />
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            LIMITED
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-playfair text-2xl font-bold text-primary mb-2" data-bind="product.name">Apricot Delight Special</h3>
+                        <p class="text-gray-600 mb-4" data-bind="product.description">Limited edition apricot dessert with seasonal fruits and exclusive royal recipe</p>
+                        
+                        <!-- Size Options -->
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-gray-700 mb-2">Select Size:</p>
+                            <div class="flex gap-2 flex-wrap">
+                                <button class="bg-cream hover:bg-gold hover:text-primary text-gray-700 px-4 py-2 rounded-lg border border-gray-200 transition-all duration-200 font-medium" data-event="click:selectSize" data-price="150">
+                                    Small - ₹150
+                                </button>
+                                <button class="bg-cream hover:bg-gold hover:text-primary text-gray-700 px-4 py-2 rounded-lg border border-gray-200 transition-all duration-200 font-medium" data-event="click:selectSize" data-price="250">
+                                    Medium - ₹250
+                                </button>
+                                <button class="bg-cream hover:bg-gold hover:text-primary text-gray-700 px-4 py-2 rounded-lg border border-gray-200 transition-all duration-200 font-medium" data-event="click:selectSize" data-price="400">
+                                    Large - ₹400
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <span class="text-primary font-bold text-lg">Starting from ₹150</span>
+                            <div class="flex items-center gap-1 text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <span class="text-gray-600 text-sm">4.9 (75+)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Out of Stock Example -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden opacity-75 relative" data-mock="true">
+                    <div class="absolute inset-0 bg-gray-900/50 flex items-center justify-center z-10">
+                        <div class="bg-white px-4 py-2 rounded-lg">
+                            <span class="text-gray-800 font-semibold">Currently Out of Stock</span>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden">
+                        <!-- Traditional Indian sweet with golden color and nuts -->
+                        <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Seasonal Special" class="w-full h-64 object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-playfair text-2xl font-bold text-gray-600 mb-2">Seasonal Special</h3>
+                        <p class="text-gray-500 mb-4">Limited time offering with seasonal ingredients</p>
+                        <div class="text-gray-500 font-bold text-lg">Returning Soon</div>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Product Showcase -->
+
+    <!-- @COMPONENT: Party Orders Form -->
+    <section class="py-16 bg-gradient-to-br from-cream to-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-primary mb-4">Planning a Celebration?</h2>
+                <p class="text-xl text-gray-600">We Cater Too!</p>
+                <p class="text-lg text-gray-500 mt-2">Let us make your special moments even sweeter</p>
+            </div>
+            
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+                <div class="bg-gradient-to-r from-primary to-green-800 p-6">
+                    <h3 class="font-playfair text-2xl font-bold text-white text-center">Party Order Request</h3>
+                </div>
+                
+                <form class="p-8 space-y-6" data-event="submit:handlePartyOrder" data-implementation="Form validation and WhatsApp/Google Sheets integration">
+                    <!-- @STATE: formData:object, errors:object, isSubmitting:boolean -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Name Field -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Name *</label>
+                            <input type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all duration-200" placeholder="Your full name" data-bind="formData.name" data-validation="required" />
+                        </div>
+                        
+                        <!-- Phone Field -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Contact Number *</label>
+                            <input type="tel" required pattern="[0-9]{10}" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all duration-200" placeholder="10-digit mobile number" data-bind="formData.phone" data-validation="phone" />
+                        </div>
+                    </div>
+                    
+                    <!-- Address Field -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Delivery Address</label>
+                        <textarea rows="3" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all duration-200 resize-none" placeholder="Complete delivery address with landmark" data-bind="formData.address"></textarea>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Date Field -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Preferred Date *</label>
+                            <input type="date" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all duration-200" data-bind="formData.date" data-validation="future-date" />
+                        </div>
+                        
+                        <!-- Time Field -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Preferred Time *</label>
+                            <input type="time" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all duration-200" data-bind="formData.time" />
+                        </div>
+                    </div>
+                    
+                    <!-- Products Multi-select -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Products Needed *</label>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                            <label class="flex items-center space-x-2 cursor-pointer p-3 rounded-lg border border-gray-200 hover:bg-cream transition-all duration-200">
+                                <input type="checkbox" value="rose-milk" class="text-gold focus:ring-gold" data-bind="formData.products" />
+                                <span class="text-sm">Rose Milk Delight</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer p-3 rounded-lg border border-gray-200 hover:bg-cream transition-all duration-200">
+                                <input type="checkbox" value="combo" class="text-gold focus:ring-gold" data-bind="formData.products" />
+                                <span class="text-sm">Royal Combo</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer p-3 rounded-lg border border-gray-200 hover:bg-cream transition-all duration-200">
+                                <input type="checkbox" value="apricot" class="text-gold focus:ring-gold" data-bind="formData.products" />
+                                <span class="text-sm">Apricot Delight</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer p-3 rounded-lg border border-gray-200 hover:bg-cream transition-all duration-200">
+                                <input type="checkbox" value="apricot-royal" class="text-gold focus:ring-gold" data-bind="formData.products" />
+                                <span class="text-sm">Apricot Royal</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer p-3 rounded-lg border border-gray-200 hover:bg-cream transition-all duration-200">
+                                <input type="checkbox" value="apricot-special" class="text-gold focus:ring-gold" data-bind="formData.products" />
+                                <span class="text-sm">Apricot Special</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer p-3 rounded-lg border border-gray-200 hover:bg-cream transition-all duration-200">
+                                <input type="checkbox" value="custom" class="text-gold focus:ring-gold" data-bind="formData.products" />
+                                <span class="text-sm">Custom Request</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Quantity Field -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Quantity Required *</label>
+                            <input type="number" min="1" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all duration-200" placeholder="Number of servings" data-bind="formData.quantity" />
+                        </div>
+                        
+                        <!-- Budget Range -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Budget Range</label>
+                            <select class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all duration-200" data-bind="formData.budget">
+                                <option value="">Select budget range</option>
+                                <option value="under-2000">Under ₹2,000</option>
+                                <option value="2000-5000">₹2,000 - ₹5,000</option>
+                                <option value="5000-10000">₹5,000 - ₹10,000</option>
+                                <option value="above-10000">Above ₹10,000</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Special Instructions -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Special Instructions</label>
+                        <textarea rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all duration-200 resize-none" placeholder="Any special requirements, dietary preferences, or customization requests..." data-bind="formData.instructions"></textarea>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="text-center pt-4">
+                        <button type="submit" class="bg-gradient-to-r from-primary to-green-800 hover:from-green-800 hover:to-primary text-white font-bold px-12 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl text-lg" data-implementation="Submit to WhatsApp API and/or Google Sheets">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Order Request
+                        </button>
+                        <p class="text-sm text-gray-500 mt-3">We'll confirm your order details within 2 hours</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Party Orders Form -->
+
+    <!-- @COMPONENT: Sticky Floating Buttons -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3" data-mock="true">
+        <!-- Swiggy Button -->
+        <button class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white p-4 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group" data-event="click:openSwiggy" data-implementation="Open Swiggy app on mobile, web link on desktop">
+            <i class="fas fa-utensils text-xl"></i>
+            <div class="absolute right-full mr-3 top-1/2 transform -translate-y-1/2 bg-black text-white text-sm px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                Order on Swiggy
+            </div>
+        </button>
+        
+        <!-- Zomato Button -->
+        <button class="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white p-4 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group" data-event="click:openZomato" data-implementation="Open Zomato app on mobile, web link on desktop">
+            <i class="fas fa-motorcycle text-xl"></i>
+            <div class="absolute right-full mr-3 top-1/2 transform -translate-y-1/2 bg-black text-white text-sm px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                Order on Zomato
+            </div>
+        </button>
+        
+        <!-- WhatsApp Contact Button -->
+        <button class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white p-4 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group" data-event="click:contactWhatsApp" data-implementation="Open WhatsApp with pre-filled message">
+            <i class="fab fa-whatsapp text-xl"></i>
+            <div class="absolute right-full mr-3 top-1/2 transform -translate-y-1/2 bg-black text-white text-sm px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                Chat with us
+            </div>
+        </button>
+    </div>
+    <!-- @END_COMPONENT: Sticky Floating Buttons -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-gradient-to-r from-primary to-green-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Brand Section -->
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="font-playfair text-3xl font-bold text-gold mb-4">Rasika Desserts</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">Where tradition meets royal indulgence. Crafting exquisite desserts that celebrate the richness of Indian heritage with modern elegance.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gold/20 hover:bg-gold text-gold hover:text-primary p-3 rounded-full transition-all duration-300" data-implementation="Link to Instagram profile">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="#" class="bg-gold/20 hover:bg-gold text-gold hover:text-primary p-3 rounded-full transition-all duration-300" data-implementation="Link to Facebook page">
+                            <i class="fab fa-facebook text-lg"></i>
+                        </a>
+                        <a href="#" class="bg-gold/20 hover:bg-gold text-gold hover:text-primary p-3 rounded-full transition-all duration-300" data-implementation="Link to WhatsApp contact">
+                            <i class="fab fa-whatsapp text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-playfair text-xl font-semibold text-gold mb-4">Contact Us</h4>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-phone text-gold"></i>
+                            <span data-mock="true">+91 98765 43210</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-gold"></i>
+                            <span data-mock="true">orders@rasikadesserts.com</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-gold mt-1"></i>
+                            <span data-mock="true">123 Royal Street<br />Dessert District<br />Mumbai - 400001</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-playfair text-xl font-semibold text-gold mb-4">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="#" class="block text-gray-300 hover:text-gold transition-colors duration-200" data-implementation="Terms & Conditions page">Terms & Conditions</a>
+                        <a href="#" class="block text-gray-300 hover:text-gold transition-colors duration-200" data-implementation="Privacy Policy page">Privacy Policy</a>
+                        <a href="#" class="block text-gray-300 hover:text-gold transition-colors duration-200" data-implementation="Refund Policy page">Refund Policy</a>
+                        <a href="#" class="block text-gray-300 hover:text-gold transition-colors duration-200" data-implementation="About Us page">About Us</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Divider -->
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">© 2025 Rasika Desserts. All rights reserved. | Crafted with <i class="fas fa-heart text-red-500"></i> for dessert lovers</p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- Thank You Modal (Hidden by default) -->
+    <!-- @STATE: showThankYou:boolean = false -->
+    <div id="thankYouModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center" data-state="showThankYou">
+        <div class="bg-white rounded-2xl p-8 max-w-md mx-4 text-center transform scale-95 transition-transform duration-300">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-check text-green-500 text-2xl"></i>
+            </div>
+            <h3 class="font-playfair text-2xl font-bold text-primary mb-2">Thank You!</h3>
+            <p class="text-gray-600 mb-6">We've received your request! We'll confirm your order details shortly.</p>
+            <button onclick="hideThankYou()" class="bg-primary hover:bg-green-800 text-white px-6 py-2 rounded-lg transition-colors duration-200">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // TODO: Implement business logic, API calls, or state management
+        
+        (function() {
+            'use strict';
+            
+            // Form handling
+            const partyForm = document.querySelector('form[data-event="submit:handlePartyOrder"]');
+            if (partyForm) {
+                partyForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // TODO: Implement form validation
+                    // TODO: Send to WhatsApp API or Google Sheets
+                    
+                    // Show thank you modal
+                    showThankYou();
+                });
+            }
+            
+            // Size selection handling
+            document.addEventListener('click', function(e) {
+                if (e.target.matches('button[data-event="click:selectSize"]')) {
+                    // Remove active class from siblings
+                    const siblings = e.target.parentElement.querySelectorAll('button');
+                    siblings.forEach(btn => {
+                        btn.classList.remove('bg-gold', 'text-primary', 'border-2', 'border-gold');
+                        btn.classList.add('bg-cream', 'hover:bg-gold', 'hover:text-primary', 'text-gray-700', 'border', 'border-gray-200');
+                    });
+                    
+                    // Add active class to clicked button
+                    e.target.classList.remove('bg-cream', 'hover:bg-gold', 'hover:text-primary', 'text-gray-700', 'border', 'border-gray-200');
+                    e.target.classList.add('bg-gold', 'text-primary', 'border-2', 'border-gold');
+                }
+            });
+            
+            // Platform buttons
+            const swiggyrButtons = document.querySelectorAll('[data-event="click:openSwiggy"]');
+            swiggyrButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // TODO: Detect mobile device and open app, otherwise web link
+                    window.open('https://swiggy.com', '_blank');
+                });
+            });
+            
+            const zomatoButtons = document.querySelectorAll('[data-event="click:openZomato"]');
+            zomatoButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // TODO: Detect mobile device and open app, otherwise web link
+                    window.open('https://zomato.com', '_blank');
+                });
+            });
+            
+            const whatsappButtons = document.querySelectorAll('[data-event="click:contactWhatsApp"]');
+            whatsappButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // TODO: Use actual WhatsApp number
+                    const message = encodeURIComponent('Hi! I would like to inquire about your desserts.');
+                    window.open(`https://wa.me/919876543210?text=${message}`, '_blank');
+                });
+            });
+        })();
+        
+        // Modal functions
+        function showThankYou() {
+            const modal = document.getElementById('thankYouModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                setTimeout(() => {
+                    modal.querySelector('div').classList.remove('scale-95');
+                    modal.querySelector('div').classList.add('scale-100');
+                }, 10);
+            }
+        }
+        
+        function hideThankYou() {
+            const modal = document.getElementById('thankYouModal');
+            if (modal) {
+                modal.querySelector('div').classList.remove('scale-100');
+                modal.querySelector('div').classList.add('scale-95');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }, 200);
+            }
+        }
+    </script>
+</body>
+</html>

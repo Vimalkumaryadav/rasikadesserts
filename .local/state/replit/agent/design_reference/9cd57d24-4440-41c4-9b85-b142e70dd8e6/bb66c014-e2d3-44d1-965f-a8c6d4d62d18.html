@@ -1,0 +1,458 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasika Desserts - Where Tradition Meets Royal Indulgence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'royal-green': '#013220',
+                        'royal-gold': '#FFD700',
+                        'royal-cream': '#FFF8E1',
+                        'dark-green': '#0a4429',
+                        'light-gold': '#FFF3B8',
+                        'gold-accent': '#B8860B'
+                    },
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'montserrat': ['Montserrat', 'sans-serif']
+                    },
+                    backgroundImage: {
+                        'royal-gradient': 'linear-gradient(135deg, #013220 0%, #0a4429 50%, #FFD700 100%)',
+                        'gold-gradient': 'linear-gradient(135deg, #FFD700 0%, #B8860B 100%)',
+                        'cream-gradient': 'linear-gradient(135deg, #FFF8E1 0%, #FFFFFF 100%)'
+                    },
+                    boxShadow: {
+                        'royal': '0 20px 40px rgba(1, 50, 32, 0.3)',
+                        'gold': '0 10px 30px rgba(255, 215, 0, 0.2)',
+                        'elegant': '0 15px 35px rgba(0, 0, 0, 0.1)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .royal-text-shadow {
+            text-shadow: 2px 2px 4px rgba(255, 215, 0, 0.3);
+        }
+        
+        .gold-text-shadow {
+            text-shadow: 1px 1px 3px rgba(1, 50, 32, 0.5);
+        }
+        
+        .ornate-border {
+            border-image: linear-gradient(45deg, #FFD700, #B8860B, #FFD700) 1;
+        }
+        
+        .hover-float {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-float:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(1, 50, 32, 0.2);
+        }
+        
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .royal-pattern {
+            background-image: radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+        }
+        
+        .golden-glow {
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+        }
+    </style>
+</head>
+
+<body class="bg-royal-cream font-montserrat">
+    <!-- @COMPONENT: Header [sticky navigation with royal styling] -->
+    <header class="fixed top-0 w-full z-50 bg-royal-green/95 backdrop-blur-sm border-b border-royal-gold/20">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-royal-gold font-playfair text-xl font-bold royal-text-shadow">
+                    Rasika Desserts
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#products" class="text-royal-cream hover:text-royal-gold transition-colors duration-300">Products</a>
+                    <a href="#party-orders" class="text-royal-cream hover:text-royal-gold transition-colors duration-300">Party Orders</a>
+                    <a href="#contact" class="text-royal-cream hover:text-royal-gold transition-colors duration-300">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- @END_COMPONENT: Header -->
+
+    <!-- @COMPONENT: Hero [cinematic hero with luxury styling] -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden royal-pattern">
+        <div class="absolute inset-0 bg-royal-gradient opacity-95"></div>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 border-2 border-royal-gold/30 rotate-45 hidden lg:block"></div>
+        <div class="absolute bottom-20 right-10 w-16 h-16 border-2 border-royal-gold/30 rotate-12 hidden lg:block"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <!-- Logo placeholder with royal presentation -->
+            <div class="mb-8 fade-in-up">
+                <div class="inline-block p-6 bg-royal-green/50 rounded-full golden-glow">
+                    <!-- Logo would be placed here - Logo_1755379876328.jpeg -->
+                    <div class="w-32 h-32 bg-royal-gold/20 rounded-full flex items-center justify-center" data-mock-image="true" data-implementation="Replace with Logo_1755379876328.jpeg">
+                        <span class="text-royal-gold font-playfair text-2xl font-bold">R</span>
+                    </div>
+                </div>
+            </div>
+            
+            <h1 class="font-playfair text-5xl md:text-7xl font-bold text-royal-gold mb-6 royal-text-shadow fade-in-up" style="animation-delay: 0.2s">
+                Rasika Desserts
+            </h1>
+            
+            <p class="text-royal-cream text-xl md:text-2xl font-light mb-12 fade-in-up" style="animation-delay: 0.4s">
+                Where Tradition Meets Royal Indulgence
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center fade-in-up" style="animation-delay: 0.6s">
+                <button class="bg-gold-gradient text-royal-green px-8 py-4 rounded-lg font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-gold" data-event="click:openSwiggy">
+                    <i class="fas fa-utensils mr-3"></i>Order on Swiggy
+                </button>
+                <button class="bg-transparent border-2 border-royal-gold text-royal-gold px-8 py-4 rounded-lg font-semibold text-lg hover:bg-royal-gold hover:text-royal-green transition-all duration-300" data-event="click:openZomato">
+                    <i class="fas fa-motorcycle mr-3"></i>Order on Zomato
+                </button>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-royal-gold animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero -->
+
+    <!-- @COMPONENT: ProductShowcase [luxury product grid] -->
+    <section id="products" class="py-20 bg-cream-gradient">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-royal-green mb-4 royal-text-shadow">
+                    Royal Dessert Collection
+                </h2>
+                <div class="w-24 h-1 bg-gold-gradient mx-auto mb-6"></div>
+                <p class="text-dark-green text-lg max-w-2xl mx-auto">
+                    Indulge in our handcrafted desserts, made with the finest ingredients and traditional recipes passed down through generations.
+                </p>
+            </div>
+            
+            <!-- @MAP: products.map(product => ( -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product Card 1: Rose Milk -->
+                <div class="bg-white rounded-xl shadow-royal hover-float p-6 border border-royal-gold/20" data-mock="true">
+                    <div class="relative mb-6">
+                        <!-- Rose milk dessert image with elegant presentation -->
+                        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Rose Milk Dessert" class="w-full h-48 object-cover rounded-lg" data-mock-image="true" data-implementation="Replace with Rose milk_1755379876329.jpeg" />
+                        <div class="absolute top-3 right-3 bg-royal-gold text-royal-green px-3 py-1 rounded-full text-sm font-semibold">
+                            20% OFF
+                        </div>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-bold text-royal-green mb-3">Rose Milk Delight</h3>
+                    <p class="text-dark-green mb-4">Traditional rose-flavored milk dessert with royal essence and delicate floral notes.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-royal-gold text-xl font-bold">₹250/box</span>
+                        <button class="bg-royal-green text-royal-cream px-4 py-2 rounded-lg hover:bg-dark-green transition-colors duration-300">
+                            <i class="fas fa-heart mr-2"></i>Add to Wishlist
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product Card 2: Combo Pack -->
+                <div class="bg-white rounded-xl shadow-royal hover-float p-6 border border-royal-gold/20" data-mock="true">
+                    <div class="relative mb-6">
+                        <!-- Combo pack image -->
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Dessert Combo Pack" class="w-full h-48 object-cover rounded-lg" data-mock-image="true" data-implementation="Replace with combo_1755379876329.jpeg" />
+                        <div class="absolute top-3 right-3 bg-royal-gold text-royal-green px-3 py-1 rounded-full text-sm font-semibold">
+                            BEST VALUE
+                        </div>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-bold text-royal-green mb-3">Royal Combo Pack</h3>
+                    <p class="text-dark-green mb-4">Perfect assortment of our signature desserts for the ultimate indulgence experience.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-royal-gold text-xl font-bold">₹499/pack</span>
+                        <button class="bg-royal-green text-royal-cream px-4 py-2 rounded-lg hover:bg-dark-green transition-colors duration-300">
+                            <i class="fas fa-heart mr-2"></i>Add to Wishlist
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product Card 3: Apricot Delight Small -->
+                <div class="bg-white rounded-xl shadow-royal hover-float p-6 border border-royal-gold/20" data-mock="true">
+                    <div class="relative mb-6">
+                        <!-- Apricot delight small size -->
+                        <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Apricot Delight Small" class="w-full h-48 object-cover rounded-lg" data-mock-image="true" data-implementation="Replace with Apricot delight small_1755379876330.jpeg" />
+                    </div>
+                    <h3 class="font-playfair text-2xl font-bold text-royal-green mb-3">Apricot Delight</h3>
+                    <p class="text-dark-green mb-4">Luscious apricot dessert with layers of creamy goodness and natural fruit essence.</p>
+                    <div class="mb-4">
+                        <p class="text-sm text-dark-green font-semibold mb-2">Available Sizes:</p>
+                        <div class="flex gap-2">
+                            <span class="bg-royal-gold text-royal-green px-3 py-1 rounded-full text-sm font-semibold">Small - ₹120</span>
+                            <span class="bg-royal-cream text-dark-green px-3 py-1 rounded-full text-sm">Medium - ₹200</span>
+                            <span class="bg-royal-cream text-dark-green px-3 py-1 rounded-full text-sm">Large - ₹350</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-royal-gold text-xl font-bold">From ₹120</span>
+                        <button class="bg-royal-green text-royal-cream px-4 py-2 rounded-lg hover:bg-dark-green transition-colors duration-300">
+                            <i class="fas fa-heart mr-2"></i>Add to Wishlist
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product Card 4: Apricot Delight Large -->
+                <div class="bg-white rounded-xl shadow-royal hover-float p-6 border border-royal-gold/20" data-mock="true">
+                    <div class="relative mb-6">
+                        <!-- Apricot delight large size -->
+                        <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Apricot Delight Large" class="w-full h-48 object-cover rounded-lg" data-mock-image="true" data-implementation="Replace with Apricot delight large_1755379876330.jpeg" />
+                        <div class="absolute top-3 right-3 bg-royal-gold text-royal-green px-3 py-1 rounded-full text-sm font-semibold">
+                            FAMILY SIZE
+                        </div>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-bold text-royal-green mb-3">Apricot Delight Large</h3>
+                    <p class="text-dark-green mb-4">Perfect for sharing! Our signature apricot dessert in generous family-size portions.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-royal-gold text-xl font-bold">₹350/large</span>
+                        <button class="bg-royal-green text-royal-cream px-4 py-2 rounded-lg hover:bg-dark-green transition-colors duration-300">
+                            <i class="fas fa-heart mr-2"></i>Add to Wishlist
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product Card 5: Premium Apricot -->
+                <div class="bg-white rounded-xl shadow-royal hover-float p-6 border border-royal-gold/20" data-mock="true">
+                    <div class="relative mb-6">
+                        <!-- Premium apricot dessert -->
+                        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Premium Apricot Delight" class="w-full h-48 object-cover rounded-lg" data-mock-image="true" data-implementation="Replace with Apricot delight_1755379876331.jpeg" />
+                        <div class="absolute top-3 right-3 bg-royal-gold text-royal-green px-3 py-1 rounded-full text-sm font-semibold">
+                            PREMIUM
+                        </div>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-bold text-royal-green mb-3">Premium Apricot Royal</h3>
+                    <p class="text-dark-green mb-4">Our most luxurious apricot creation with premium ingredients and royal presentation.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-royal-gold text-xl font-bold">₹450/box</span>
+                        <button class="bg-royal-green text-royal-cream px-4 py-2 rounded-lg hover:bg-dark-green transition-colors duration-300">
+                            <i class="fas fa-heart mr-2"></i>Add to Wishlist
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Placeholder for future products -->
+                <div class="bg-gradient-to-br from-royal-cream to-white rounded-xl shadow-elegant hover-float p-6 border border-royal-gold/30 flex items-center justify-center min-h-[400px]" data-mock="true">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-royal-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-plus text-royal-gold text-2xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-royal-green mb-2">More Delights Coming Soon</h3>
+                        <p class="text-dark-green">Stay tuned for new royal additions to our dessert collection</p>
+                    </div>
+                </div>
+            </div>
+            <!-- @END_MAP )) -->
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ProductShowcase -->
+
+    <!-- @COMPONENT: PartyOrders [elegant catering section] -->
+    <section id="party-orders" class="py-20 bg-royal-green royal-pattern">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-royal-gold mb-6 royal-text-shadow">
+                    Planning a Celebration?
+                </h2>
+                <div class="w-24 h-1 bg-gold-gradient mx-auto mb-8"></div>
+                <p class="text-royal-cream text-xl mb-8 leading-relaxed">
+                    We cater to your special occasions with our exquisite dessert collections. Perfect for weddings, birthdays, anniversaries, and corporate events.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div class="text-center p-6 bg-royal-green/50 rounded-xl border border-royal-gold/20">
+                        <div class="w-16 h-16 bg-royal-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-wedding-ring text-royal-gold text-2xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-royal-gold mb-2">Weddings</h3>
+                        <p class="text-royal-cream">Royal dessert spreads for your special day</p>
+                    </div>
+                    
+                    <div class="text-center p-6 bg-royal-green/50 rounded-xl border border-royal-gold/20">
+                        <div class="w-16 h-16 bg-royal-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-birthday-cake text-royal-gold text-2xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-royal-gold mb-2">Birthdays</h3>
+                        <p class="text-royal-cream">Memorable celebrations with sweet indulgence</p>
+                    </div>
+                    
+                    <div class="text-center p-6 bg-royal-green/50 rounded-xl border border-royal-gold/20">
+                        <div class="w-16 h-16 bg-royal-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-briefcase text-royal-gold text-2xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-royal-gold mb-2">Corporate</h3>
+                        <p class="text-royal-cream">Professional events with royal hospitality</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-royal-gold/30">
+                    <h3 class="font-playfair text-2xl font-bold text-royal-gold mb-6">Order in Bulk via WhatsApp</h3>
+                    <p class="text-royal-cream mb-8 leading-relaxed">
+                        Get personalized service for your event. Our team will help you choose the perfect dessert combinations and quantities for your celebration.
+                    </p>
+                    
+                    <button class="bg-gold-gradient text-royal-green px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all duration-300 shadow-gold" data-event="click:openWhatsApp" data-implementation="WhatsApp link: https://wa.me/business_number?text=Hi%20Rasika%20Desserts,%20I%20want%20to%20place%20a%20party%20order">
+                        <i class="fab fa-whatsapp mr-3 text-xl"></i>
+                        Order via WhatsApp
+                    </button>
+                    
+                    <p class="text-royal-cream/80 text-sm mt-4">
+                        Available 9 AM - 9 PM | Minimum order: ₹1000 for party orders
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: PartyOrders -->
+
+    <!-- @COMPONENT: Footer [elegant footer with royal styling] -->
+    <footer id="contact" class="bg-royal-green py-16 border-t border-royal-gold/20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Brand Section -->
+                <div class="md:col-span-2">
+                    <h3 class="font-playfair text-2xl font-bold text-royal-gold mb-4 royal-text-shadow">
+                        Rasika Desserts
+                    </h3>
+                    <p class="text-royal-cream mb-6 leading-relaxed">
+                        Where tradition meets royal indulgence. We craft the finest desserts using time-honored recipes and premium ingredients, bringing you an experience of pure luxury and taste.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-royal-gold/20 rounded-full flex items-center justify-center text-royal-gold hover:bg-royal-gold hover:text-royal-green transition-all duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-royal-gold/20 rounded-full flex items-center justify-center text-royal-gold hover:bg-royal-gold hover:text-royal-green transition-all duration-300">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-royal-gold/20 rounded-full flex items-center justify-center text-royal-gold hover:bg-royal-gold hover:text-royal-green transition-all duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-playfair text-lg font-bold text-royal-gold mb-4">Contact Info</h4>
+                    <div class="space-y-3 text-royal-cream">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-royal-gold"></i>
+                            <span data-bind="business.phone">+91 98765 43210</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-royal-gold"></i>
+                            <span data-bind="business.email">info@rasikadesserts.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock mr-3 text-royal-gold"></i>
+                            <span>9 AM - 9 PM Daily</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-playfair text-lg font-bold text-royal-gold mb-4">Quick Links</h4>
+                    <div class="space-y-2 text-royal-cream">
+                        <a href="#products" class="block hover:text-royal-gold transition-colors duration-300">Our Products</a>
+                        <a href="#party-orders" class="block hover:text-royal-gold transition-colors duration-300">Party Orders</a>
+                        <a href="#" class="block hover:text-royal-gold transition-colors duration-300">Terms & Conditions</a>
+                        <a href="#" class="block hover:text-royal-gold transition-colors duration-300">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-royal-gold/20 pt-8 text-center">
+                <p class="text-royal-cream/80">
+                    Copyright © 2025 Rasika Desserts. All rights reserved. | Crafted with <i class="fas fa-heart text-royal-gold"></i> for dessert lovers
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- @COMPONENT: StickyOrderButtons [floating action buttons] -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <button class="w-14 h-14 bg-orange-500 text-white rounded-full shadow-lg hover:scale-110 transition-all duration-300 flex items-center justify-center" data-event="click:openSwiggy" title="Order on Swiggy">
+            <i class="fas fa-utensils text-lg"></i>
+        </button>
+        <button class="w-14 h-14 bg-red-500 text-white rounded-full shadow-lg hover:scale-110 transition-all duration-300 flex items-center justify-center" data-event="click:openZomato" title="Order on Zomato">
+            <i class="fas fa-motorcycle text-lg"></i>
+        </button>
+        <button class="w-14 h-14 bg-green-500 text-white rounded-full shadow-lg hover:scale-110 transition-all duration-300 flex items-center justify-center" data-event="click:openWhatsApp" title="WhatsApp Us">
+            <i class="fab fa-whatsapp text-lg"></i>
+        </button>
+    </div>
+    <!-- @END_COMPONENT: StickyOrderButtons -->
+
+    <script>
+        // Animation on scroll
+        (function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            document.querySelectorAll('.hover-float').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // TODO: Implement business logic for:
+            // - Swiggy/Zomato app detection and linking
+            // - WhatsApp business integration
+            // - Product wishlist functionality
+            // - Order tracking system
+        })();
+    </script>
+</body>
+</html>

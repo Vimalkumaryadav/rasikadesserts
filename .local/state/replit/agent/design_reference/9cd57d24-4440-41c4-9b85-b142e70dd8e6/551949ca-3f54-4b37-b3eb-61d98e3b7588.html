@@ -1,0 +1,680 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasika Desserts - Where Tradition Meets Royal Indulgence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rasika-green': '#013220',
+                        'rasika-gold': '#FFD700',
+                        'rasika-cream': '#FFF8E1',
+                    },
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="font-montserrat bg-white">
+    <!-- @COMPONENT: AdminToggle [Admin mode toggle for mockup] -->
+    <div id="adminToggle" class="fixed top-4 right-4 z-50">
+        <button onclick="toggleAdminMode()" class="bg-rasika-green text-rasika-gold px-4 py-2 rounded-lg shadow-lg hover:bg-opacity-90 transition-all">
+            <i class="fas fa-cog mr-2"></i><span id="adminToggleText">Admin Mode</span>
+        </button>
+    </div>
+    <!-- @END_COMPONENT: AdminToggle -->
+
+    <!-- @COMPONENT: AdminDashboard [Admin CRUD interface] -->
+    <div id="adminDashboard" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40">
+        <div class="bg-white w-full h-full overflow-y-auto">
+            <div class="bg-rasika-green text-white p-6">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-3xl font-playfair font-bold">Rasika Desserts Admin</h1>
+                    <button onclick="toggleAdminMode()" class="text-rasika-gold hover:text-white">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Product Management -->
+                    <div class="bg-rasika-cream rounded-lg p-6">
+                        <h2 class="text-2xl font-playfair font-semibold text-rasika-green mb-4">Product Management</h2>
+                        
+                        <!-- Add Product Form -->
+                        <div class="bg-white rounded-lg p-4 mb-6">
+                            <h3 class="text-lg font-semibold mb-3">Add New Product</h3>
+                            <form data-mock="true">
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <input type="text" placeholder="Product Name" class="border border-gray-300 rounded-lg px-3 py-2" data-mock="true">
+                                    <input type="file" accept="image/*" class="border border-gray-300 rounded-lg px-3 py-2" data-mock="true">
+                                </div>
+                                <textarea placeholder="Product Description" class="w-full border border-gray-300 rounded-lg px-3 py-2 mt-3" rows="3" data-mock="true"></textarea>
+                                
+                                <!-- Size & Price Options -->
+                                <div class="mt-4">
+                                    <h4 class="font-semibold mb-2">Size & Price Options</h4>
+                                    <div class="space-y-2">
+                                        <div class="flex gap-2">
+                                            <input type="text" placeholder="Size (e.g., Small)" class="flex-1 border border-gray-300 rounded px-3 py-2" data-mock="true">
+                                            <input type="number" placeholder="Price" class="w-24 border border-gray-300 rounded px-3 py-2" data-mock="true">
+                                            <button type="button" class="bg-red-500 text-white px-3 py-2 rounded hover:bg-red-600">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="mt-2 text-rasika-green hover:text-rasika-gold">
+                                        <i class="fas fa-plus mr-1"></i>Add Size Option
+                                    </button>
+                                </div>
+                                
+                                <!-- Discount Settings -->
+                                <div class="mt-4 grid md:grid-cols-3 gap-3">
+                                    <input type="number" placeholder="Discount %" class="border border-gray-300 rounded px-3 py-2" data-mock="true">
+                                    <input type="date" placeholder="Start Date" class="border border-gray-300 rounded px-3 py-2" data-mock="true">
+                                    <input type="date" placeholder="End Date" class="border border-gray-300 rounded px-3 py-2" data-mock="true">
+                                </div>
+                                
+                                <div class="flex justify-between items-center mt-4">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="mr-2" data-mock="true">
+                                        <span>Product Available</span>
+                                    </label>
+                                    <button type="submit" class="bg-rasika-green text-white px-6 py-2 rounded-lg hover:bg-opacity-90">
+                                        Add Product
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- Existing Products List -->
+                        <div class="bg-white rounded-lg p-4">
+                            <h3 class="text-lg font-semibold mb-3">Existing Products</h3>
+                            <div class="space-y-3">
+                                <!-- @MAP: products.map(product => ( -->
+                                <div class="flex items-center justify-between border-b pb-3" data-mock="true">
+                                    <div class="flex items-center space-x-3">
+                                        <!-- Sample dessert product image for admin view -->
+                                        <img src="https://pixabay.com/get/g520280cbbdb83747eac93ef8332784cfc9127f37f23237da4b94be42433bb1cafc18975bf666bc1376ad88fb5a2625cb5352642b2274937f11ef5a696119b45a_1280.jpg" 
+                                             alt="Product thumbnail" class="w-12 h-12 rounded object-cover" data-mock-image="true">
+                                        <div>
+                                            <h4 class="font-semibold" data-bind="product.name">Apricot Delight</h4>
+                                            <p class="text-sm text-gray-600" data-bind="product.status">Active</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex space-x-2">
+                                        <button class="text-blue-600 hover:text-blue-800" data-event="click:editProduct">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-800" data-event="click:deleteProduct">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                        <button class="text-green-600 hover:text-green-800" data-event="click:toggleAvailability">
+                                            <i class="fas fa-toggle-on"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- @END_MAP )) -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Party Orders Management -->
+                    <div class="bg-rasika-cream rounded-lg p-6">
+                        <h2 class="text-2xl font-playfair font-semibold text-rasika-green mb-4">Party Orders</h2>
+                        
+                        <div class="bg-white rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-lg font-semibold">Recent Orders</h3>
+                                <button class="bg-rasika-green text-white px-4 py-2 rounded-lg hover:bg-opacity-90" data-event="click:exportOrders">
+                                    <i class="fas fa-download mr-2"></i>Export CSV
+                                </button>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <!-- @MAP: partyOrders.map(order => ( -->
+                                <div class="border rounded-lg p-4" data-mock="true">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <div>
+                                            <h4 class="font-semibold" data-bind="order.customerName">Priya Sharma</h4>
+                                            <p class="text-sm text-gray-600" data-bind="order.phone">+91 98765 43210</p>
+                                        </div>
+                                        <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm" data-bind="order.status">Pending</span>
+                                    </div>
+                                    <p class="text-sm mb-2" data-bind="order.address">123 MG Road, Bangalore 560001</p>
+                                    <p class="text-sm mb-2" data-bind="order.deliveryDate">Date: 15th Jan 2025, 6:00 PM</p>
+                                    <div class="text-sm">
+                                        <strong>Products:</strong> <span data-bind="order.products">Apricot Delight Large x2, Rose Milk x1</span>
+                                    </div>
+                                    <div class="flex space-x-2 mt-3">
+                                        <button class="bg-green-600 text-white px-3 py-1 rounded text-sm hover:bg-green-700" data-event="click:approveOrder">
+                                            Approve
+                                        </button>
+                                        <button class="bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700" data-event="click:contactCustomer">
+                                            Contact
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- @END_MAP )) -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: AdminDashboard -->
+
+    <!-- @COMPONENT: HeroSection [Main hero with logo and tagline] -->
+    <section class="bg-gradient-to-br from-rasika-green to-green-900 min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-rasika-gold/10 to-transparent"></div>
+        
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <!-- Logo placeholder - using a styled div since we can't access the uploaded logo -->
+            <div class="mb-8">
+                <!-- Elegant logo design representing the uploaded logo -->
+                <div class="inline-block bg-rasika-green border-4 border-rasika-gold rounded-lg p-8 shadow-2xl">
+                    <h1 class="text-4xl md:text-6xl font-playfair font-bold text-rasika-gold">Rasika</h1>
+                    <p class="text-rasika-gold/80 text-lg font-montserrat tracking-widest">DESSERTS</p>
+                </div>
+                <!-- @IMPLEMENTATION: Replace with actual logo: Logo_1755379876328.jpeg -->
+            </div>
+            
+            <h2 class="text-2xl md:text-4xl font-playfair text-white mb-8 leading-relaxed">
+                Where Tradition Meets <span class="text-rasika-gold">Royal Indulgence</span>
+            </h2>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="bg-rasika-gold text-rasika-green px-8 py-4 rounded-full font-semibold text-lg hover:bg-yellow-500 transition-all transform hover:scale-105 shadow-lg" data-event="click:openSwiggy">
+                    <i class="fas fa-utensils mr-3"></i>Order on Swiggy
+                </button>
+                <button class="bg-transparent border-2 border-rasika-gold text-rasika-gold px-8 py-4 rounded-full font-semibold text-lg hover:bg-rasika-gold hover:text-rasika-green transition-all transform hover:scale-105" data-event="click:openZomato">
+                    <i class="fas fa-motorcycle mr-3"></i>Order on Zomato
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- @COMPONENT: ProductShowcase [Grid of products with pricing] -->
+    <section class="py-16 bg-rasika-cream">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-rasika-green mb-4">Our Royal Collection</h2>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">Handcrafted desserts made with the finest ingredients, each bite a testament to our royal heritage</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: products.map(product => ( -->
+                
+                <!-- Apricot Delight Product Card -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300" data-mock="true">
+                    <!-- Elegant apricot dessert with golden color tones -->
+                    <img src="https://pixabay.com/get/g54dca28c2eff163854c0087d19c5dafa0c7814b83303eff849d918a8db211beacf682c6b665c8dd7b260ce6c0b8390f9ad1a70163f199a67e422422bed3efb7d_1280.jpg" 
+                         alt="Apricot Delight - Rich apricot flavored dessert" class="w-full h-64 object-cover" data-mock-image="true">
+                    <!-- @IMPLEMENTATION: Use Apricot delight_1755379876331.jpeg -->
+                    
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-2xl font-playfair font-semibold text-rasika-green" data-bind="product.name">Apricot Delight</h3>
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">20% OFF</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4" data-bind="product.description">A heavenly blend of fresh apricots and cream, creating the perfect balance of sweet and tangy flavors</p>
+                        
+                        <!-- Size & Price Options -->
+                        <div class="space-y-3 mb-4">
+                            <div class="flex gap-2">
+                                <button class="flex-1 border-2 border-rasika-green text-rasika-green px-4 py-2 rounded-lg hover:bg-rasika-green hover:text-white transition-all" data-event="click:selectSize">
+                                    <span class="font-semibold">Small</span><br>
+                                    <span class="text-sm">₹120</span>
+                                </button>
+                                <button class="flex-1 border-2 border-rasika-green text-rasika-green px-4 py-2 rounded-lg hover:bg-rasika-green hover:text-white transition-all" data-event="click:selectSize">
+                                    <span class="font-semibold">Medium</span><br>
+                                    <span class="text-sm">₹200</span>
+                                </button>
+                                <button class="flex-1 border-2 border-rasika-green text-rasika-green px-4 py-2 rounded-lg hover:bg-rasika-green hover:text-white transition-all" data-event="click:selectSize">
+                                    <span class="font-semibold">Large</span><br>
+                                    <span class="text-sm">₹350</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Rose Milk Product Card -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300" data-mock="true">
+                    <!-- Beautiful rose-colored milk-based dessert -->
+                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+                         alt="Rose Milk - Traditional rose flavored milk dessert" class="w-full h-64 object-cover" data-mock-image="true">
+                    <!-- @IMPLEMENTATION: Use Rose milk_1755379876329.jpeg -->
+                    
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-2xl font-playfair font-semibold text-rasika-green" data-bind="product.name">Rose Milk</h3>
+                            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Available</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4" data-bind="product.description">Traditional rose-infused milk dessert with cardamom and pistachios, a royal treat from ancient recipes</p>
+                        
+                        <!-- Size & Price Options -->
+                        <div class="space-y-3 mb-4">
+                            <div class="flex gap-2">
+                                <button class="flex-1 border-2 border-rasika-green text-rasika-green px-4 py-2 rounded-lg hover:bg-rasika-green hover:text-white transition-all" data-event="click:selectSize">
+                                    <span class="font-semibold">Regular</span><br>
+                                    <span class="text-sm">₹80</span>
+                                </button>
+                                <button class="flex-1 border-2 border-rasika-green text-rasika-green px-4 py-2 rounded-lg hover:bg-rasika-green hover:text-white transition-all" data-event="click:selectSize">
+                                    <span class="font-semibold">Large</span><br>
+                                    <span class="text-sm">₹150</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Combo Special Product Card -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300" data-mock="true">
+                    <!-- Attractive combo platter with multiple desserts -->
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+                         alt="Combo Special - Assorted dessert combination platter" class="w-full h-64 object-cover" data-mock-image="true">
+                    <!-- @IMPLEMENTATION: Use combo_1755379876329.jpeg -->
+                    
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-2xl font-playfair font-semibold text-rasika-green" data-bind="product.name">Royal Combo</h3>
+                            <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Best Value</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4" data-bind="product.description">A royal selection of our finest desserts - perfect for sharing or treating yourself to variety</p>
+                        
+                        <!-- Size & Price Options -->
+                        <div class="space-y-3 mb-4">
+                            <div class="flex gap-2">
+                                <button class="flex-1 border-2 border-rasika-green text-rasika-green px-4 py-2 rounded-lg hover:bg-rasika-green hover:text-white transition-all" data-event="click:selectSize">
+                                    <span class="font-semibold">Family Pack</span><br>
+                                    <span class="text-sm">₹450</span>
+                                </button>
+                                <button class="flex-1 border-2 border-rasika-green text-rasika-green px-4 py-2 rounded-lg hover:bg-rasika-green hover:text-white transition-all" data-event="click:selectSize">
+                                    <span class="font-semibold">Party Pack</span><br>
+                                    <span class="text-sm">₹800</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Apricot Delight Variations -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300" data-mock="true">
+                    <!-- Small portion apricot dessert presentation -->
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+                         alt="Apricot Delight Small - Individual serving of apricot dessert" class="w-full h-64 object-cover" data-mock-image="true">
+                    <!-- @IMPLEMENTATION: Use Apricot delight small_1755379876330.jpeg -->
+                    
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-2xl font-playfair font-semibold text-rasika-green" data-bind="product.name">Apricot Mini</h3>
+                            <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Perfect Size</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4" data-bind="product.description">Individual serving of our signature apricot delight - perfect for a personal indulgence</p>
+                        
+                        <div class="space-y-3 mb-4">
+                            <button class="w-full border-2 border-rasika-green text-rasika-green px-4 py-3 rounded-lg hover:bg-rasika-green hover:text-white transition-all" data-event="click:selectSize">
+                                <span class="font-semibold">Single Serve</span><br>
+                                <span class="text-sm">₹95</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300" data-mock="true">
+                    <!-- Large elaborate apricot dessert presentation -->
+                    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+                         alt="Apricot Delight Large - Premium large serving of apricot dessert" class="w-full h-64 object-cover" data-mock-image="true">
+                    <!-- @IMPLEMENTATION: Use Apricot delight large_1755379876330.jpeg -->
+                    
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-2xl font-playfair font-semibold text-rasika-green" data-bind="product.name">Apricot Royale</h3>
+                            <span class="bg-rasika-gold text-rasika-green px-3 py-1 rounded-full text-sm font-semibold">Premium</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4" data-bind="product.description">Our grandest apricot creation - layers of apricot cream with nuts and royal garnish</p>
+                        
+                        <div class="space-y-3 mb-4">
+                            <button class="w-full border-2 border-rasika-green text-rasika-green px-4 py-3 rounded-lg hover:bg-rasika-green hover:text-white transition-all" data-event="click:selectSize">
+                                <span class="font-semibold">Royal Size</span><br>
+                                <span class="text-sm">₹480</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Coming Soon Product -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden opacity-75" data-mock="true">
+                    <!-- Elegant dessert presentation suggesting seasonal special -->
+                    <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+                         alt="Seasonal Special - Upcoming seasonal dessert offering" class="w-full h-64 object-cover" data-mock-image="true">
+                    
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-2xl font-playfair font-semibold text-gray-500">Seasonal Special</h3>
+                            <span class="bg-gray-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Coming Soon</span>
+                        </div>
+                        
+                        <p class="text-gray-500 mb-4">Something special is brewing in our royal kitchen. Stay tuned for our next masterpiece!</p>
+                        
+                        <button class="w-full border-2 border-gray-300 text-gray-500 px-4 py-3 rounded-lg cursor-not-allowed" disabled>
+                            <span class="font-semibold">Notify Me</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ProductShowcase -->
+
+    <!-- @COMPONENT: PartyOrdersForm [Catering request form] -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-playfair font-bold text-rasika-green mb-4">Planning a Celebration?</h2>
+                    <p class="text-xl text-gray-700">We Cater Too!</p>
+                    <p class="text-lg text-gray-600 mt-2">Let us make your special moments even sweeter with our royal desserts</p>
+                </div>
+                
+                <div class="bg-rasika-cream rounded-2xl p-8 shadow-xl">
+                    <form id="partyOrderForm" class="space-y-6" data-mock="true">
+                        <!-- @STATE: formData:object = {} -->
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-rasika-green font-semibold mb-2">Name *</label>
+                                <input type="text" required 
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-rasika-gold focus:ring-2 focus:ring-rasika-gold/20 transition-all" 
+                                       placeholder="Your full name" data-mock="true" data-bind="formData.name">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-rasika-green font-semibold mb-2">Contact Number *</label>
+                                <input type="tel" required pattern="[0-9]{10}" 
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-rasika-gold focus:ring-2 focus:ring-rasika-gold/20 transition-all" 
+                                       placeholder="+91 98765 43210" data-mock="true" data-bind="formData.phone">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-rasika-green font-semibold mb-2">Delivery Address</label>
+                            <textarea rows="3" 
+                                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-rasika-gold focus:ring-2 focus:ring-rasika-gold/20 transition-all" 
+                                      placeholder="Complete delivery address with landmark" data-mock="true" data-bind="formData.address"></textarea>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-rasika-green font-semibold mb-2">Delivery Date *</label>
+                                <input type="date" required min="2025-01-16"
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-rasika-gold focus:ring-2 focus:ring-rasika-gold/20 transition-all" 
+                                       data-mock="true" data-bind="formData.date">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-rasika-green font-semibold mb-2">Delivery Time *</label>
+                                <input type="time" required 
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-rasika-gold focus:ring-2 focus:ring-rasika-gold/20 transition-all" 
+                                       data-mock="true" data-bind="formData.time">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-rasika-green font-semibold mb-2">Products Needed *</label>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <label class="flex items-center space-x-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-rasika-gold transition-all cursor-pointer">
+                                    <input type="checkbox" class="form-checkbox text-rasika-green" data-mock="true" data-bind="formData.products">
+                                    <span>Apricot Delight</span>
+                                </label>
+                                <label class="flex items-center space-x-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-rasika-gold transition-all cursor-pointer">
+                                    <input type="checkbox" class="form-checkbox text-rasika-green" data-mock="true" data-bind="formData.products">
+                                    <span>Rose Milk</span>
+                                </label>
+                                <label class="flex items-center space-x-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-rasika-gold transition-all cursor-pointer">
+                                    <input type="checkbox" class="form-checkbox text-rasika-green" data-mock="true" data-bind="formData.products">
+                                    <span>Royal Combo</span>
+                                </label>
+                                <label class="flex items-center space-x-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-rasika-gold transition-all cursor-pointer">
+                                    <input type="checkbox" class="form-checkbox text-rasika-green" data-mock="true" data-bind="formData.products">
+                                    <span>Custom Selection</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-rasika-green font-semibold mb-2">Quantity Required</label>
+                            <input type="number" min="1" placeholder="Number of servings needed" 
+                                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-rasika-gold focus:ring-2 focus:ring-rasika-gold/20 transition-all" 
+                                   data-mock="true" data-bind="formData.quantity">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-rasika-green font-semibold mb-2">Special Instructions</label>
+                            <textarea rows="4" placeholder="Any special requirements, dietary restrictions, or customization requests..." 
+                                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-rasika-gold focus:ring-2 focus:ring-rasika-gold/20 transition-all" 
+                                      data-mock="true" data-bind="formData.instructions"></textarea>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" 
+                                    class="bg-rasika-green text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-opacity-90 transform hover:scale-105 transition-all shadow-lg" 
+                                    data-event="click:submitPartyOrder">
+                                <i class="fas fa-paper-plane mr-3"></i>Send Order Request
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <!-- Success Message (Initially Hidden) -->
+                    <div id="successMessage" class="hidden text-center py-8">
+                        <div class="bg-green-100 border border-green-400 text-green-700 px-6 py-4 rounded-lg">
+                            <i class="fas fa-check-circle text-2xl mb-2"></i>
+                            <h3 class="text-lg font-semibold">Thank You!</h3>
+                            <p>We've received your request! We'll confirm shortly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: PartyOrdersForm -->
+
+    <!-- @COMPONENT: StickyOrderButtons [Floating Swiggy/Zomato buttons] -->
+    <div class="fixed bottom-6 right-6 z-30 flex flex-col space-y-3">
+        <button class="bg-orange-500 text-white p-4 rounded-full shadow-2xl hover:bg-orange-600 transform hover:scale-110 transition-all" 
+                data-event="click:openSwiggy" title="Order on Swiggy">
+            <i class="fas fa-utensils text-xl"></i>
+        </button>
+        <button class="bg-red-500 text-white p-4 rounded-full shadow-2xl hover:bg-red-600 transform hover:scale-110 transition-all" 
+                data-event="click:openZomato" title="Order on Zomato">
+            <i class="fas fa-motorcycle text-xl"></i>
+        </button>
+    </div>
+    <!-- @END_COMPONENT: StickyOrderButtons -->
+
+    <!-- @COMPONENT: Footer [Contact info and links] -->
+    <footer class="bg-rasika-green text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-playfair font-bold text-rasika-gold mb-4">Rasika Desserts</h3>
+                    <p class="text-gray-300 mb-4">Where tradition meets royal indulgence. Crafting premium desserts with love and heritage since generations.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-rasika-gold hover:text-white transition-colors" data-event="click:openInstagram">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-rasika-gold hover:text-white transition-colors" data-event="click:openFacebook">
+                            <i class="fab fa-facebook text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-rasika-gold hover:text-white transition-colors" data-event="click:openWhatsApp">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-rasika-gold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p><i class="fas fa-phone mr-2"></i>+91 98765 43210</p>
+                        <p><i class="fas fa-envelope mr-2"></i>orders@rasikadesserts.com</p>
+                        <p><i class="fas fa-clock mr-2"></i>9 AM - 10 PM Daily</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-rasika-gold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-rasika-gold transition-colors">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-rasika-gold transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-rasika-gold transition-colors">Refund Policy</a></li>
+                        <li><a href="#" class="hover:text-rasika-gold transition-colors">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Rasika Desserts. All rights reserved. | Crafted with ❤️ for sweet moments</p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        (() => {
+            // Admin mode toggle functionality
+            window.toggleAdminMode = function() {
+                const dashboard = document.getElementById('adminDashboard');
+                const toggleText = document.getElementById('adminToggleText');
+                
+                if (dashboard.classList.contains('hidden')) {
+                    dashboard.classList.remove('hidden');
+                    toggleText.textContent = 'Exit Admin';
+                } else {
+                    dashboard.classList.add('hidden');
+                    toggleText.textContent = 'Admin Mode';
+                }
+            };
+            
+            // Form submission simulation
+            const form = document.getElementById('partyOrderForm');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // TODO: Implement actual form submission to Firebase/Supabase
+                    // TODO: Send WhatsApp notification to admin
+                    // TODO: Save order data to database
+                    
+                    // Show success message
+                    form.style.display = 'none';
+                    document.getElementById('successMessage').classList.remove('hidden');
+                    
+                    // Reset form after 5 seconds
+                    setTimeout(() => {
+                        form.style.display = 'block';
+                        document.getElementById('successMessage').classList.add('hidden');
+                        form.reset();
+                    }, 5000);
+                });
+            }
+            
+            // Smooth scrolling for CTA buttons
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('[data-event*="openSwiggy"]')) {
+                    // TODO: Implement Swiggy deep linking
+                    // For mobile: Open Swiggy app
+                    // For desktop: Open Swiggy website
+                    console.log('Opening Swiggy...');
+                }
+                
+                if (e.target.closest('[data-event*="openZomato"]')) {
+                    // TODO: Implement Zomato deep linking
+                    // For mobile: Open Zomato app
+                    // For desktop: Open Zomato website
+                    console.log('Opening Zomato...');
+                }
+                
+                if (e.target.closest('[data-event*="selectSize"]')) {
+                    // TODO: Implement product selection logic
+                    // Add to cart functionality would go here
+                    const button = e.target.closest('button');
+                    const allButtons = button.parentNode.querySelectorAll('button');
+                    
+                    // Visual feedback for selection
+                    allButtons.forEach(btn => btn.classList.remove('bg-rasika-green', 'text-white'));
+                    button.classList.add('bg-rasika-green', 'text-white');
+                }
+            });
+            
+            // Admin dashboard mock functionality
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('[data-event*="editProduct"]')) {
+                    // TODO: Implement product editing modal
+                    console.log('Edit product functionality');
+                }
+                
+                if (e.target.closest('[data-event*="deleteProduct"]')) {
+                    // TODO: Implement product deletion with confirmation
+                    if (confirm('Are you sure you want to delete this product?')) {
+                        console.log('Delete product functionality');
+                    }
+                }
+                
+                if (e.target.closest('[data-event*="toggleAvailability"]')) {
+                    // TODO: Implement availability toggle
+                    console.log('Toggle product availability');
+                }
+                
+                if (e.target.closest('[data-event*="exportOrders"]')) {
+                    // TODO: Implement CSV export functionality
+                    console.log('Export orders to CSV');
+                }
+                
+                if (e.target.closest('[data-event*="approveOrder"]')) {
+                    // TODO: Implement order approval workflow
+                    console.log('Approve party order');
+                }
+                
+                if (e.target.closest('[data-event*="contactCustomer"]')) {
+                    // TODO: Implement customer contact via WhatsApp
+                    console.log('Contact customer via WhatsApp');
+                }
+            });
+            
+            // Form validation for party orders
+            const inputs = document.querySelectorAll('input[required]');
+            inputs.forEach(input => {
+                input.addEventListener('invalid', function() {
+                    this.classList.add('border-red-500');
+                });
+                
+                input.addEventListener('input', function() {
+                    if (this.validity.valid) {
+                        this.classList.remove('border-red-500');
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
