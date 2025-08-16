@@ -1,12 +1,7 @@
 import { motion } from "framer-motion";
 
 export default function Footer() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
+  // Quick links removed as requested
 
   const envNumber = (import.meta as any).env?.VITE_WHATSAPP_NUMBER as string | undefined;
   const whatsappNumber = (envNumber || "919550128476").replace(/\D/g, "");
@@ -16,17 +11,12 @@ export default function Footer() {
     { icon: "fab fa-whatsapp", href: `https://wa.me/${whatsappNumber}`, label: "WhatsApp" }
   ];
 
-  const quickLinks = [
-    { text: "Our Products", action: () => scrollToSection("products") },
-    { text: "Party Orders", action: () => scrollToSection("party-orders") },
-    { text: "Terms & Conditions", href: "#" },
-    { text: "Privacy Policy", href: "#" }
-  ];
+  // const quickLinks = [];
 
   return (
     <footer id="contact" className="bg-royal-green py-16 border-t border-royal-gold/20">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand Section */}
           <motion.div 
             className="md:col-span-2"
@@ -82,29 +72,7 @@ export default function Footer() {
             </div>
           </motion.div>
           
-          {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="font-playfair text-lg font-bold text-royal-gold mb-4" data-testid="quick-links-title">
-              Quick Links
-            </h4>
-            <div className="space-y-2 text-royal-cream">
-              {quickLinks.map((link, index) => (
-                <button
-                  key={index}
-                  onClick={link.action}
-                  className="block hover:text-royal-gold transition-colors duration-300 text-left"
-                  data-testid={`quick-link-${link.text.toLowerCase().replace(/\s+/g, '-')}`}
-                >
-                  {link.text}
-                </button>
-              ))}
-            </div>
-          </motion.div>
+          {/* Quick Links removed */}
         </div>
         
         <motion.div 

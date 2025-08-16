@@ -10,11 +10,7 @@ export default function PartyOrders() {
   };
 
   const services = [
-    {
-  icon: "fas fa-ring",
-      title: "Weddings",
-      description: "Royal dessert spreads for your special day"
-    },
+  { icon: "fas fa-champagne-glasses", title: "Weddings", description: "Elegant sweets for your big day, crafted with love." },
     {
       icon: "fas fa-birthday-cake",
       title: "Birthdays",
