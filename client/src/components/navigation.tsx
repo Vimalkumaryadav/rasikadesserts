@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { useWishlist } from "@/hooks/use-wishlist";
 import type { WishlistItem } from "@/hooks/use-wishlist";
@@ -27,7 +27,7 @@ export default function Navigation() {
     >
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
-          <div className="text-royal-gold font-brand text-2xl font-bold royal-text-shadow tracking-wide">
+          <div className="gold-foil-text font-brand text-2xl font-bold royal-text-shadow tracking-wide">
             RASIका DESERTS
           </div>
           <nav className="hidden md:flex space-x-8 items-center">
@@ -77,7 +77,7 @@ export default function Navigation() {
                     <p className="text-royal-cream/80">Your wishlist is empty. Add some desserts you love!</p>
                   ) : (
                     <div className="space-y-4">
-                      {items.map((it) => (
+                      {items.map((it: WishlistItem) => (
                         <div key={it.id} className="flex items-center gap-3 p-3 rounded-lg border border-royal-gold/20">
                           <img src={it.image} alt={it.name} className="w-16 h-16 object-cover rounded" />
                           <div className="flex-1">

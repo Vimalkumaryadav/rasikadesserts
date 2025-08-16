@@ -108,6 +108,15 @@
     text-shadow: 2px 2px 4px rgba(255, 215, 0, 0.3);
   }
   
+  /* Gold foil-like gradient for text */
+  .gold-foil-text {
+    background-image:
+      linear-gradient(135deg, #7a5a00 0%, #b88a00 18%, #ffd36b 35%, #fff1b3 50%, #e1b12c 65%, #a37000 82%, #7a5a00 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
   .gold-text-shadow {
     text-shadow: 1px 1px 3px rgba(1, 50, 32, 0.5);
   }

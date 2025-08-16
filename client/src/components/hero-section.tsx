@@ -41,7 +41,7 @@ export default function HeroSection() {
         </motion.div>
         
         <motion.h1 
-          className="font-brand text-5xl md:text-7xl font-bold text-transparent bg-gold-gradient bg-clip-text mb-6 royal-text-shadow"
+          className="font-brand text-5xl md:text-7xl font-bold gold-foil-text mb-6 royal-text-shadow"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
