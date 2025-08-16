@@ -1,10 +1,11 @@
-import { useCallback } from "react";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { useCallback, useState } from "react";
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { useWishlist } from "@/hooks/use-wishlist";
 import type { WishlistItem } from "@/hooks/use-wishlist";
 
 export default function Navigation() {
   const { items, remove, clear } = useWishlist();
+  const [wishlistOpen, setWishlistOpen] = useState(false);
   const scrollToSection = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -53,21 +54,20 @@ export default function Navigation() {
             </button>
 
             {/* Wishlist Panel */}
-            <Sheet>
-              <SheetTrigger asChild>
-                <button
-                  className="relative bg-royal-gold/15 text-royal-cream px-4 py-2 rounded-lg border border-royal-gold/30 hover:bg-royal-gold/25 transition-colors duration-300"
-                  data-testid="nav-wishlist"
-                >
-                  <i className="fas fa-heart mr-2 text-royal-gold"></i>
-                  Wishlist
-                  {items.length > 0 && (
-                    <span className="ml-2 text-royal-green bg-royal-gold rounded-full px-2 py-0.5 text-xs font-bold">
-                      {items.length}
-                    </span>
-                  )}
-                </button>
-              </SheetTrigger>
+            <Sheet open={wishlistOpen} onOpenChange={setWishlistOpen}>
+              <button
+                onClick={() => setWishlistOpen((o: boolean) => !o)}
+                className="relative bg-royal-gold/15 text-royal-cream px-4 py-2 rounded-lg border border-royal-gold/30 hover:bg-royal-gold/25 transition-colors duration-300"
+                data-testid="nav-wishlist"
+              >
+                <i className="fas fa-heart mr-2 text-royal-gold"></i>
+                Wishlist
+                {items.length > 0 && (
+                  <span className="ml-2 text-royal-green bg-royal-gold rounded-full px-2 py-0.5 text-xs font-bold">
+                    {items.length}
+                  </span>
+                )}
+              </button>
               <SheetContent side="right" className="w-full sm:max-w-md bg-royal-green text-royal-cream border-l border-royal-gold/30">
                 <SheetHeader>
                   <SheetTitle className="text-royal-gold font-playfair text-2xl">Your Wishlist</SheetTitle>
