@@ -5,10 +5,13 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      // As soon as the user scrolls, enable the solid header background
+      setIsScrolled(window.scrollY > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
+    // Initialize on mount in case the page loads scrolled
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -21,7 +24,7 @@ export default function Navigation() {
 
   return (
     <header 
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 w-full z-[1000] transition-all duration-300 ${
         isScrolled 
           ? "bg-royal-green/95 backdrop-blur-sm border-b border-royal-gold/20" 
           : "bg-transparent"
