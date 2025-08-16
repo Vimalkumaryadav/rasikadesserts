@@ -37,7 +37,7 @@ export default function HeroSection() {
       <div className="absolute bottom-20 right-10 w-16 h-16 border-2 border-royal-gold/30 rotate-12 hidden lg:block"></div>
       
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        {/* Logo */}
+        {/* Logo with circular wrapper */}
         <motion.div 
           className="mb-8"
           initial={{ opacity: 0, y: 30 }}
@@ -55,13 +55,13 @@ export default function HeroSection() {
         </motion.div>
         
         <motion.h1 
-          className="font-playfair text-5xl md:text-7xl font-bold text-royal-gold mb-6 royal-text-shadow"
+          className="font-brand text-5xl md:text-7xl font-bold text-royal-gold mb-6 royal-text-shadow"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           data-testid="hero-title"
         >
-          Rasika Desserts
+          Rasiका
         </motion.h1>
         
         <motion.p 

@@ -75,6 +75,7 @@ export default {
         mono: ["var(--font-mono)"],
         playfair: ["var(--font-playfair)", "serif"],
         montserrat: ["var(--font-montserrat)", "sans-serif"],
+  brand: ["var(--font-playfair)", "var(--font-devanagari)", "serif"],
       },
       backgroundImage: {
         'royal-gradient': 'linear-gradient(135deg, var(--royal-green) 0%, var(--dark-green) 50%, var(--royal-gold) 100%)',

@@ -14,8 +14,8 @@ export default function Navigation() {
     >
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
-          <div className="text-royal-gold font-playfair text-xl font-bold royal-text-shadow">
-            Rasika Desserts
+          <div className="text-royal-gold font-brand text-2xl font-bold royal-text-shadow tracking-wide">
+            Rasiका
           </div>
           <nav className="hidden md:flex space-x-8">
             <button 
