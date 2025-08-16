@@ -61,7 +61,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           data-testid="hero-title"
         >
-          Rasiका
+          rasiका
         </motion.h1>
         
         <motion.p 
