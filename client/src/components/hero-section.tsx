@@ -72,7 +72,7 @@ export default function HeroSection() {
             data-testid="button-swiggy"
           >
             <span className="inline-flex items-center gap-3">
-              <SiSwiggy className="w-5 h-5 text-white" />
+              <SiSwiggy className="w-6 h-6 text-white" />
               Order on Swiggy
             </span>
           </button>
@@ -82,7 +82,7 @@ export default function HeroSection() {
             data-testid="button-zomato"
           >
             <span className="inline-flex items-center gap-3">
-              <SiZomato className="w-5 h-5 text-white" />
+              <SiZomato className="w-6 h-6 text-white" />
               Order on Zomato
             </span>
           </button>

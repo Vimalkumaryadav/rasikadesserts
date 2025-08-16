@@ -95,10 +95,10 @@ export default function PartyOrders() {
             
             <button 
               onClick={openWhatsApp}
-              className="bg-gold-gradient text-royal-green px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all duration-300 shadow-gold"
+              className="bg-[#25D366] text-white px-8 py-4 rounded-xl font-bold text-lg hover:brightness-110 transition-all duration-300 shadow-gold inline-flex items-center gap-3"
               data-testid="button-whatsapp-party-order"
             >
-              <i className="fab fa-whatsapp mr-3 text-xl"></i>
+              <i className="fab fa-whatsapp text-2xl"></i>
               Order via WhatsApp
             </button>
             

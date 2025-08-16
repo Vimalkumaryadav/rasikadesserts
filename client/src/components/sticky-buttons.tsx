@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { SiSwiggy, SiZomato } from "react-icons/si";
+import { SiSwiggy, SiZomato, SiWhatsapp } from "react-icons/si";
 
 export default function StickyButtons() {
   const SWIGGY_URL = "https://www.swiggy.com/city/hyderabad/rasika-desserts-bhagwan-gunj-himayath-nagar-rest1148155";
@@ -39,8 +39,8 @@ export default function StickyButtons() {
     },
     {
       icon: "fab fa-whatsapp",
-      bgColor: "bg-green-500",
-      hoverColor: "hover:bg-green-600",
+      bgColor: "bg-[#25D366]",
+      hoverColor: "hover:brightness-110",
       action: openWhatsApp,
       title: "WhatsApp Us",
       testId: "sticky-whatsapp"
@@ -68,11 +68,11 @@ export default function StickyButtons() {
           }}
         >
           {button.testId === "sticky-swiggy" ? (
-            <SiSwiggy className="w-5 h-5 text-white" />
+            <SiSwiggy className="w-6 h-6 text-white" />
           ) : button.testId === "sticky-zomato" ? (
-            <SiZomato className="w-5 h-5 text-white" />
+            <SiZomato className="w-6 h-6 text-white" />
           ) : (
-            <i className={`${button.icon} text-lg`}></i>
+            <SiWhatsapp className="w-6 h-6 text-white" />
           )}
         </motion.button>
       ))}
