@@ -1,34 +1,16 @@
-import { useState, useEffect } from "react";
+import { useCallback } from "react";
 
 export default function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // As soon as the user scrolls, enable the solid header background
-      setIsScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    // Initialize on mount in case the page loads scrolled
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  };
+  }, []);
 
   return (
     <header 
-      className={`fixed top-0 w-full z-[1000] transition-all duration-300 ${
-        isScrolled 
-          ? "bg-royal-green/95 backdrop-blur-sm border-b border-royal-gold/20" 
-          : "bg-transparent"
-      }`}
+      className="fixed top-0 w-full z-[1000] bg-royal-green text-royal-cream border-b border-royal-gold/20 shadow-md"
     >
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
