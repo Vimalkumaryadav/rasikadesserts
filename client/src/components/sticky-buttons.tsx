@@ -22,17 +22,17 @@ export default function StickyButtons() {
 
   const buttons = [
     {
-  icon: "fas fa-utensils",
-      bgColor: "bg-orange-500",
-      hoverColor: "hover:bg-orange-600",
+      icon: "fas fa-utensils",
+      bgColor: "bg-[#FC8019]",
+      hoverColor: "hover:brightness-110",
       action: openSwiggy,
       title: "Order on Swiggy",
       testId: "sticky-swiggy"
     },
     {
-  icon: "fas fa-motorcycle",
-      bgColor: "bg-red-500",
-      hoverColor: "hover:bg-red-600",
+      icon: "fas fa-motorcycle",
+      bgColor: "bg-[#CB202D]",
+      hoverColor: "hover:brightness-110",
       action: openZomato,
       title: "Order on Zomato",
       testId: "sticky-zomato"
@@ -68,9 +68,9 @@ export default function StickyButtons() {
           }}
         >
           {button.testId === "sticky-swiggy" ? (
-            <SiSwiggy className="w-5 h-5" style={{ color: "#FC8019" }} />
+            <SiSwiggy className="w-5 h-5 text-white" />
           ) : button.testId === "sticky-zomato" ? (
-            <SiZomato className="w-5 h-5" style={{ color: "#CB202D" }} />
+            <SiZomato className="w-5 h-5 text-white" />
           ) : (
             <i className={`${button.icon} text-lg`}></i>
           )}

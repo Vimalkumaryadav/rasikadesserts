@@ -68,21 +68,21 @@ export default function HeroSection() {
         >
           <button 
             onClick={openSwiggy}
-            className="bg-gold-gradient text-royal-green px-8 py-4 rounded-lg font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-gold"
+            className="bg-[#FC8019] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:brightness-110 transition-all duration-300 shadow-gold"
             data-testid="button-swiggy"
           >
             <span className="inline-flex items-center gap-3">
-              <span className="bg-white/30 rounded p-1"><SiSwiggy className="w-5 h-5" style={{ color: "#FC8019" }} /></span>
+              <SiSwiggy className="w-5 h-5 text-white" />
               Order on Swiggy
             </span>
           </button>
           <button 
             onClick={openZomato}
-            className="bg-transparent border-2 border-royal-gold text-royal-gold px-8 py-4 rounded-lg font-semibold text-lg hover:bg-royal-gold hover:text-royal-green transition-all duration-300"
+            className="bg-[#CB202D] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:brightness-110 transition-all duration-300 shadow-gold"
             data-testid="button-zomato"
           >
             <span className="inline-flex items-center gap-3">
-              <span className="bg-royal-gold/20 rounded p-1"><SiZomato className="w-5 h-5" style={{ color: "#CB202D" }} /></span>
+              <SiZomato className="w-5 h-5 text-white" />
               Order on Zomato
             </span>
           </button>
