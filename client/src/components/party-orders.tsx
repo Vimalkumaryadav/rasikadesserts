@@ -9,7 +9,7 @@ export default function PartyOrders() {
 
   const services = [
     {
-      icon: "fas fa-wedding-ring",
+  icon: "fas fa-ring",
       title: "Weddings",
       description: "Royal dessert spreads for your special day"
     },
