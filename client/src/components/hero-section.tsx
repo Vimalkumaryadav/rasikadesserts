@@ -2,30 +2,15 @@ import { motion } from "framer-motion";
 import LogoImage from "@assets/Logo_1755379876328.jpeg";
 
 export default function HeroSection() {
+  const SWIGGY_URL = "https://www.swiggy.com/city/hyderabad/rasika-desserts-bhagwan-gunj-himayath-nagar-rest1148155";
+  const ZOMATO_URL = "https://www.zomato.com/hyderabad/rasika-desserts-begum-bazaar/order";
+
   const openSwiggy = () => {
-    // For mobile: try to open app, fallback to web
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (isMobile) {
-      window.location.href = "swiggy://";
-      setTimeout(() => {
-        window.open("https://www.swiggy.com", "_blank");
-      }, 1000);
-    } else {
-      window.open("https://www.swiggy.com", "_blank");
-    }
+    window.open(SWIGGY_URL, "_blank");
   };
 
   const openZomato = () => {
-    // For mobile: try to open app, fallback to web
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (isMobile) {
-      window.location.href = "zomato://";
-      setTimeout(() => {
-        window.open("https://www.zomato.com", "_blank");
-      }, 1000);
-    } else {
-      window.open("https://www.zomato.com", "_blank");
-    }
+    window.open(ZOMATO_URL, "_blank");
   };
 
   return (
