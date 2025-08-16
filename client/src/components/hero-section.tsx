@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import LogoImage from "@assets/Logo_1755379876328.jpeg";
+import { SiSwiggy, SiZomato } from "react-icons/si";
 
 export default function HeroSection() {
   const SWIGGY_URL = "https://www.swiggy.com/city/hyderabad/rasika-desserts-bhagwan-gunj-himayath-nagar-rest1148155";
@@ -70,14 +71,20 @@ export default function HeroSection() {
             className="bg-gold-gradient text-royal-green px-8 py-4 rounded-lg font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-gold"
             data-testid="button-swiggy"
           >
-            <i className="fas fa-utensils mr-3"></i>Order on Swiggy
+            <span className="inline-flex items-center gap-3">
+              <span className="bg-white/30 rounded p-1"><SiSwiggy className="w-5 h-5" style={{ color: "#FC8019" }} /></span>
+              Order on Swiggy
+            </span>
           </button>
           <button 
             onClick={openZomato}
             className="bg-transparent border-2 border-royal-gold text-royal-gold px-8 py-4 rounded-lg font-semibold text-lg hover:bg-royal-gold hover:text-royal-green transition-all duration-300"
             data-testid="button-zomato"
           >
-            <i className="fas fa-motorcycle mr-3"></i>Order on Zomato
+            <span className="inline-flex items-center gap-3">
+              <span className="bg-royal-gold/20 rounded p-1"><SiZomato className="w-5 h-5" style={{ color: "#CB202D" }} /></span>
+              Order on Zomato
+            </span>
           </button>
         </motion.div>
       </div>

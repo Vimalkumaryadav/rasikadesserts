@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { SiSwiggy, SiZomato } from "react-icons/si";
 
 export default function StickyButtons() {
   const SWIGGY_URL = "https://www.swiggy.com/city/hyderabad/rasika-desserts-bhagwan-gunj-himayath-nagar-rest1148155";
@@ -21,7 +22,7 @@ export default function StickyButtons() {
 
   const buttons = [
     {
-      icon: "fas fa-utensils",
+  icon: "fas fa-utensils",
       bgColor: "bg-orange-500",
       hoverColor: "hover:bg-orange-600",
       action: openSwiggy,
@@ -29,7 +30,7 @@ export default function StickyButtons() {
       testId: "sticky-swiggy"
     },
     {
-      icon: "fas fa-motorcycle",
+  icon: "fas fa-motorcycle",
       bgColor: "bg-red-500",
       hoverColor: "hover:bg-red-600",
       action: openZomato,
@@ -66,7 +67,13 @@ export default function StickyButtons() {
             stiffness: 100
           }}
         >
-          <i className={`${button.icon} text-lg`}></i>
+          {button.testId === "sticky-swiggy" ? (
+            <SiSwiggy className="w-5 h-5" style={{ color: "#FC8019" }} />
+          ) : button.testId === "sticky-zomato" ? (
+            <SiZomato className="w-5 h-5" style={{ color: "#CB202D" }} />
+          ) : (
+            <i className={`${button.icon} text-lg`}></i>
+          )}
         </motion.button>
       ))}
     </div>
