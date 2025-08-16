@@ -82,8 +82,8 @@ export default function Footer() {
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <p className="text-royal-cream/80" data-testid="copyright">
-            Copyright © 2025 Rasika Desserts. All rights reserved. | Crafted with <i className="fas fa-heart text-royal-gold"></i> for dessert lovers
+          <p className="text-royal-cream" data-testid="copyright">
+            Copyright © 2025 Rasika Desserts. All rights reserved. | Crafted with <span role="img" aria-label="love" className="text-royal-gold">♥</span> for dessert lovers
           </p>
         </motion.div>
       </div>
