@@ -4,6 +4,8 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
+  // Use the repo name as base when deploying to GitHub Pages (project pages)
+  base: process.env.GITHUB_PAGES === "true" ? "/rasikadesserts/" : "/",
   plugins: [
     react(),
     runtimeErrorOverlay(),
