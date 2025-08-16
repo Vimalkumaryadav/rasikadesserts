@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { useWishlist } from "@/hooks/use-wishlist";
+import { useToast } from "@/hooks/use-toast";
 import RoseMilkImage from "@assets/Rose milk_1755379876329.jpeg";
 import ComboImage from "@assets/combo_1755379876329.jpeg";
 import ApricotSmallImage from "@assets/Apricot delight small_1755379876330.jpeg";
@@ -57,6 +59,8 @@ const products = [
 ];
 
 export default function ProductShowcase() {
+  const { add, remove, isInWishlist } = useWishlist();
+  const { toast } = useToast();
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -159,10 +163,27 @@ export default function ProductShowcase() {
                   {product.price}
                 </span>
                 <button 
+                  onClick={() => {
+                    const inList = isInWishlist(product.id);
+                    if (inList) {
+                      remove(product.id);
+                      toast({
+                        title: "Removed from wishlist",
+                        description: `${product.name} was removed.`,
+                      });
+                    } else {
+                      add({ id: product.id, name: product.name, price: product.price, image: product.image });
+                      toast({
+                        title: "Added to wishlist",
+                        description: `${product.name} was added.`,
+                      });
+                    }
+                  }}
                   className="bg-royal-green text-royal-cream px-4 py-2 rounded-lg hover:bg-dark-green transition-colors duration-300"
                   data-testid={`button-wishlist-${product.id}`}
                 >
-                  <i className="fas fa-heart mr-2"></i>Add to Wishlist
+                  <i className={`fas mr-2 ${isInWishlist(product.id) ? "fa-heart" : "fa-heart"}`}></i>
+                  {isInWishlist(product.id) ? "In Wishlist" : "Add to Wishlist"}
                 </button>
               </div>
             </motion.div>
