@@ -68,9 +68,9 @@ export default function StickyButtons() {
           }}
         >
           {button.testId === "sticky-swiggy" ? (
-            <SiSwiggy className="w-6 h-6 text-white" />
+            <SiSwiggy className="w-8 h-8 text-white" />
           ) : button.testId === "sticky-zomato" ? (
-            <SiZomato className="w-6 h-6 text-white" />
+            <SiZomato className="w-8 h-8 text-white" />
           ) : (
             <SiWhatsapp className="w-6 h-6 text-white" />
           )}

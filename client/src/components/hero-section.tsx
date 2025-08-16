@@ -71,8 +71,8 @@ export default function HeroSection() {
             className="bg-[#FC8019] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:brightness-110 transition-all duration-300 shadow-gold"
             data-testid="button-swiggy"
           >
-            <span className="inline-flex items-center gap-3">
-              <SiSwiggy className="w-6 h-6 text-white" />
+            <span className="inline-flex items-center gap-4">
+              <SiSwiggy className="w-8 h-8 text-white" />
               Order on Swiggy
             </span>
           </button>
@@ -81,8 +81,8 @@ export default function HeroSection() {
             className="bg-[#CB202D] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:brightness-110 transition-all duration-300 shadow-gold"
             data-testid="button-zomato"
           >
-            <span className="inline-flex items-center gap-3">
-              <SiZomato className="w-6 h-6 text-white" />
+            <span className="inline-flex items-center gap-4">
+              <SiZomato className="w-8 h-8 text-white" />
               Order on Zomato
             </span>
           </button>
