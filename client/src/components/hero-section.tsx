@@ -41,7 +41,7 @@ export default function HeroSection() {
         </motion.div>
         
         <motion.h1 
-          className="font-brand text-5xl md:text-7xl font-bold text-royal-gold mb-6 royal-text-shadow"
+          className="font-brand text-5xl md:text-7xl font-bold text-transparent bg-gold-gradient bg-clip-text mb-6 royal-text-shadow"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -82,7 +82,7 @@ export default function HeroSection() {
             data-testid="button-zomato"
           >
             <span className="inline-flex items-center gap-4">
-              <SiZomato className="w-8 h-8 text-white" />
+              <SiZomato className="w-10 h-10 text-white" />
               Order on Zomato
             </span>
           </button>
