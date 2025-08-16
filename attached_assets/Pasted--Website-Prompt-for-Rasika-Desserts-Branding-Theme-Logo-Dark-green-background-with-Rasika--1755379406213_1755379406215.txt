@@ -1,0 +1,216 @@
+📌 Website Prompt for Rasika Desserts
+🎨 Branding & Theme
+
+Logo: Dark green background with "Rasika" in golden, royal typography (provided).
+
+Colors:
+
+Dark Green (#013220) → Primary
+
+Gold (#FFD700) → Accent
+
+Cream (#FFF8E1) → Background highlights
+
+White (#FFFFFF) → Text contrast
+
+Fonts:
+
+Headings → Playfair Display (serif, elegant)
+
+Body text → Montserrat (sans-serif, clean and readable)
+
+Style: Luxurious, elegant, minimalist, high-quality product photography focus.
+
+🌟 Website Structure (Single Page Layout)
+1. Hero Section
+
+Background: Dark green with a subtle gold gradient overlay.
+
+Centered Rasika Desserts logo.
+
+Tagline below: “Where Tradition Meets Royal Indulgence”.
+
+CTA buttons:
+
+“Order on Swiggy”
+
+“Order on Zomato”
+→ Open app on mobile, fallback to web link on desktop.
+
+2. Product Showcase
+
+Grid layout with responsive product cards.
+
+Each card includes:
+
+Large product image.
+
+Product name (e.g., Apricot Delight).
+
+Short description.
+
+Size & price options as clickable tiles (not dropdowns). Example:
+
+Small – ₹120
+
+Medium – ₹200
+
+Large – ₹350
+
+Discount badge (e.g., “20% OFF – Limited Time”).
+
+Out-of-stock indicator if unavailable.
+
+Layout should allow easy addition of new products without breaking design.
+
+3. Party Orders Form
+
+Section title: “Planning a Celebration? We Cater Too!”
+
+Fields:
+
+Name (required)
+
+Contact number (validated for phone format)
+
+Delivery address
+
+Date & Time (cannot be in the past)
+
+Product(s) needed (multi-select)
+
+Quantity required
+
+Special instructions (optional)
+
+Submit button: “Send Order Request”.
+
+On submission:
+
+Sends order details to owner via WhatsApp API and/or saves to Google Sheets (via Zapier/Airtable).
+
+Shows Thank You message: “We’ve received your request! We’ll confirm shortly.”
+
+4. Ordering Platforms (Sticky Shortcut)
+
+Instead of a full section, use a floating sticky button at bottom-right:
+
+Swiggy + Zomato icons side by side.
+
+Always visible, redirects to ordering pages/apps.
+
+5. Footer
+
+Background: Dark green, gold typography.
+
+Contents:
+
+Contact info (phone + email).
+
+Social media icons (Instagram, Facebook).
+
+Links: Terms & Conditions, Privacy Policy.
+
+Copyright © Rasika Desserts 2025.
+
+🔐 Admin Dashboard (Owner Editable Mode via Secret URL)
+
+Accessible only by authenticated owner login.
+
+Features:
+
+Manage Products
+
+Add, edit, delete products.
+
+Upload product images.
+
+Add size/price variations.
+
+Apply discounts (with start/end dates).
+
+Toggle availability (active/inactive).
+
+Manage Party Orders
+
+View form submissions.
+
+Export to CSV.
+
+Integration with Google Sheets for live sync.
+
+Future Scalability
+
+Add seasonal specials or testimonials.
+
+⚠️ Note: GitHub Pages cannot handle backend features. For admin functionality, deploy to Netlify or Vercel (with Firebase or Supabase backend).
+
+⚙️ Deployment Instructions
+Hosting
+
+If static-only (no admin dashboard) → GitHub Pages.
+
+If with admin dashboard & database → Netlify or Vercel recommended.
+
+GitHub Actions Workflow
+
+For React + Vite project, use:
+
+name: Deploy Website to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+
+✅ Final Notes
+
+Design tone: Royal, minimal, and image-driven.
+
+Mobile-first approach: Must look elegant on phones since most users order via apps.
+
+Security: Admin dashboard must require login, not just a secret URL.
+
+Future-proof: Integrations (Firebase, Supabase, Google Sheets) allow easy scaling.
