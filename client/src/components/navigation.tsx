@@ -23,14 +23,30 @@ export default function Navigation() {
 
   return (
     <header 
-      className="fixed top-0 w-full z-[1000] bg-royal-green text-royal-cream border-b border-royal-gold/20 shadow-md"
+      className="fixed top-0 w-full z-[2000] bg-royal-green/95 backdrop-blur-sm text-royal-cream border-b border-royal-gold/20 shadow-md"
     >
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           <div className="gold-foil-text font-brand text-2xl font-bold royal-text-shadow tracking-wide">
             RASIका DESERTS
           </div>
-          <nav className="hidden md:flex space-x-8 items-center">
+          <div className="flex items-center gap-3">
+            {/* Mobile Wishlist Button */}
+            <button
+              onClick={() => setWishlistOpen((o: boolean) => !o)}
+              className="md:hidden relative bg-royal-gold/15 text-royal-cream px-3 py-2 rounded-lg border border-royal-gold/30 hover:bg-royal-gold/25 transition-colors duration-300"
+              aria-label="Open wishlist"
+              data-testid="nav-wishlist-mobile"
+            >
+              <i className="fas fa-heart text-royal-gold"></i>
+              {items.length > 0 && (
+                <span className="absolute -top-2 -right-2 text-royal-green bg-royal-gold rounded-full px-1.5 py-0.5 text-xs font-bold">
+                  {items.length}
+                </span>
+              )}
+            </button>
+
+            <nav className="hidden md:flex space-x-8 items-center">
             <button 
               onClick={() => scrollToSection("products")}
               className="text-royal-cream hover:text-royal-gold transition-colors duration-300"
@@ -52,9 +68,7 @@ export default function Navigation() {
             >
               Contact
             </button>
-
-            {/* Wishlist Panel */}
-            <Sheet open={wishlistOpen} onOpenChange={setWishlistOpen}>
+              {/* Desktop Wishlist Button */}
               <button
                 onClick={() => setWishlistOpen((o: boolean) => !o)}
                 className="relative bg-royal-gold/15 text-royal-cream px-4 py-2 rounded-lg border border-royal-gold/30 hover:bg-royal-gold/25 transition-colors duration-300"
@@ -68,55 +82,58 @@ export default function Navigation() {
                   </span>
                 )}
               </button>
-              <SheetContent side="right" className="w-full sm:max-w-md bg-royal-green text-royal-cream border-l border-royal-gold/30">
-                <SheetHeader>
-                  <SheetTitle className="text-royal-gold font-playfair text-2xl">Your Wishlist</SheetTitle>
-                </SheetHeader>
-                <div className="mt-4 space-y-4">
-                  {items.length === 0 ? (
-                    <p className="text-royal-cream/80">Your wishlist is empty. Add some desserts you love!</p>
-                  ) : (
-                    <div className="space-y-4">
-                      {items.map((it: WishlistItem) => (
-                        <div key={it.id} className="flex items-center gap-3 p-3 rounded-lg border border-royal-gold/20">
-                          <img src={it.image} alt={it.name} className="w-16 h-16 object-cover rounded" />
-                          <div className="flex-1">
-                            <div className="font-semibold text-royal-gold">{it.name}</div>
-                            <div className="text-royal-cream/80 text-sm">{it.price}</div>
-                          </div>
-                          <button
-                            onClick={() => remove(it.id)}
-                            className="text-royal-cream hover:text-royal-gold"
-                            aria-label={`Remove ${it.name}`}
-                          >
-                            <i className="fas fa-trash"></i>
-                          </button>
-                        </div>
-                      ))}
-                      <div className="flex gap-3 pt-2">
-                        <button
-                          onClick={openWhatsApp}
-                          className="flex-1 bg-gold-gradient text-royal-green px-4 py-2 rounded-lg font-semibold hover:opacity-90 transition"
-                          data-testid="wishlist-order-whatsapp"
-                        >
-                          <i className="fab fa-whatsapp mr-2"></i>Order via WhatsApp
-                        </button>
-                        <button
-                          onClick={clear}
-                          className="px-4 py-2 rounded-lg border border-royal-gold/40 text-royal-cream hover:bg-royal-gold/10 transition"
-                          data-testid="wishlist-clear"
-                        >
-                          Clear
-                        </button>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </SheetContent>
-            </Sheet>
-          </nav>
+            </nav>
+          </div>
         </div>
       </div>
+      {/* Wishlist Panel (shared for mobile & desktop) */}
+      <Sheet open={wishlistOpen} onOpenChange={setWishlistOpen}>
+        <SheetContent side="right" className="w-full sm:max-w-md bg-royal-green text-royal-cream border-l border-royal-gold/30">
+          <SheetHeader>
+            <SheetTitle className="text-royal-gold font-playfair text-2xl">Your Wishlist</SheetTitle>
+          </SheetHeader>
+          <div className="mt-4 space-y-4">
+            {items.length === 0 ? (
+              <p className="text-royal-cream/80">Your wishlist is empty. Add some desserts you love!</p>
+            ) : (
+              <div className="space-y-4">
+                {items.map((it: WishlistItem) => (
+                  <div key={it.id} className="flex items-center gap-3 p-3 rounded-lg border border-royal-gold/20">
+                    <img src={it.image} alt={it.name} className="w-16 h-16 object-cover rounded" />
+                    <div className="flex-1">
+                      <div className="font-semibold text-royal-gold">{it.name}</div>
+                      <div className="text-royal-cream/80 text-sm">{it.price}</div>
+                    </div>
+                    <button
+                      onClick={() => remove(it.id)}
+                      className="text-royal-cream hover:text-royal-gold"
+                      aria-label={`Remove ${it.name}`}
+                    >
+                      <i className="fas fa-trash"></i>
+                    </button>
+                  </div>
+                ))}
+                <div className="flex gap-3 pt-2">
+                  <button
+                    onClick={openWhatsApp}
+                    className="flex-1 bg-gold-gradient text-royal-green px-4 py-2 rounded-lg font-semibold hover:opacity-90 transition"
+                    data-testid="wishlist-order-whatsapp"
+                  >
+                    <i className="fab fa-whatsapp mr-2"></i>Order via WhatsApp
+                  </button>
+                  <button
+                    onClick={clear}
+                    className="px-4 py-2 rounded-lg border border-royal-gold/40 text-royal-cream hover:bg-royal-gold/10 transition"
+                    data-testid="wishlist-clear"
+                  >
+                    Clear
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        </SheetContent>
+      </Sheet>
     </header>
   );
 }
