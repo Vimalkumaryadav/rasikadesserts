@@ -8,10 +8,12 @@ export default function Footer() {
     }
   };
 
+  const envNumber = (import.meta as any).env?.VITE_WHATSAPP_NUMBER as string | undefined;
+  const whatsappNumber = (envNumber || "919550128476").replace(/\D/g, "");
   const socialLinks = [
     { icon: "fab fa-instagram", href: "#", label: "Instagram" },
     { icon: "fab fa-facebook", href: "#", label: "Facebook" },
-    { icon: "fab fa-whatsapp", href: "#", label: "WhatsApp" }
+    { icon: "fab fa-whatsapp", href: `https://wa.me/${whatsappNumber}`, label: "WhatsApp" }
   ];
 
   const quickLinks = [
@@ -67,7 +69,7 @@ export default function Footer() {
             <div className="space-y-3 text-royal-cream">
               <div className="flex items-center" data-testid="contact-phone">
                 <i className="fas fa-phone mr-3 text-royal-gold"></i>
-                <span>+91 98765 43210</span>
+                <span>+91 95501 28476</span>
               </div>
               <div className="flex items-center" data-testid="contact-email">
                 <i className="fas fa-envelope mr-3 text-royal-gold"></i>

@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 export default function PartyOrders() {
   const openWhatsApp = () => {
     const message = encodeURIComponent("Hi Rasika Desserts, I want to place a party order.");
-    const businessNumber = process.env.VITE_WHATSAPP_NUMBER || "919876543210"; // Default number
-    window.open(`https://wa.me/${businessNumber}?text=${message}`, "_blank");
+  // Prefer Vite env var if provided, fallback to the correct business number
+  const envNumber = (import.meta as any).env?.VITE_WHATSAPP_NUMBER as string | undefined;
+  const businessNumber = (envNumber || "919550128476").replace(/\D/g, "");
+  window.open(`https://wa.me/${businessNumber}?text=${message}`, "_blank");
   };
 
   const services = [
