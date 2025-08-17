@@ -23,7 +23,7 @@ export default function Navigation() {
 
   return (
     <header 
-      className="fixed top-0 w-full z-[2000] bg-royal-green/95 backdrop-blur-sm text-royal-cream border-b border-royal-gold/20 shadow-md"
+      className="fixed top-0 w-full z-[2000] bg-royal-green backdrop-blur-sm text-royal-cream border-b border-royal-gold/20 shadow-md"
     >
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
@@ -87,8 +87,8 @@ export default function Navigation() {
         </div>
       </div>
       {/* Wishlist Panel (shared for mobile & desktop) */}
-      <Sheet open={wishlistOpen} onOpenChange={setWishlistOpen}>
-        <SheetContent side="right" className="w-full sm:max-w-md bg-royal-green text-royal-cream border-l border-royal-gold/30">
+  <Sheet open={wishlistOpen} onOpenChange={(open: boolean) => setWishlistOpen(open)}>
+        <SheetContent side="right" className="z-[3000] w-full sm:max-w-md bg-royal-green text-royal-cream border-l border-royal-gold/30">
           <SheetHeader>
             <SheetTitle className="text-royal-gold font-playfair text-2xl">Your Wishlist</SheetTitle>
           </SheetHeader>
@@ -116,10 +116,10 @@ export default function Navigation() {
                 <div className="flex gap-3 pt-2">
                   <button
                     onClick={openWhatsApp}
-                    className="flex-1 bg-gold-gradient text-royal-green px-4 py-2 rounded-lg font-semibold hover:opacity-90 transition"
+                    className="flex-1 bg-[#25D366] text-white px-4 py-2 rounded-lg font-semibold hover:brightness-110 transition"
                     data-testid="wishlist-order-whatsapp"
                   >
-                    <i className="fab fa-whatsapp mr-2"></i>Order via WhatsApp
+                    <i className="fab fa-whatsapp mr-2 text-white"></i>Order via WhatsApp
                   </button>
                   <button
                     onClick={clear}
