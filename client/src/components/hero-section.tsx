@@ -61,28 +61,28 @@ export default function HeroSection() {
         </motion.p>
         
         <motion.div 
-          className="flex flex-col sm:flex-row gap-6 justify-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <button 
             onClick={openSwiggy}
-            className="bg-[#FC8019] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:brightness-110 transition-all duration-300 shadow-gold"
+            className="bg-[#FC8019] text-white px-6 py-3 rounded-lg font-semibold text-base hover:brightness-110 transition-all duration-300 shadow-gold"
             data-testid="button-swiggy"
           >
-            <span className="inline-flex items-center gap-4">
-              <SiSwiggy className="w-8 h-8 text-white" />
+            <span className="inline-flex items-center gap-3">
+              <SiSwiggy className="w-6 h-6 text-white" />
               Order on Swiggy
             </span>
           </button>
           <button 
             onClick={openZomato}
-            className="bg-[#CB202D] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:brightness-110 transition-all duration-300 shadow-gold"
+            className="bg-[#CB202D] text-white px-6 py-3 rounded-lg font-semibold text-base hover:brightness-110 transition-all duration-300 shadow-gold"
             data-testid="button-zomato"
           >
-            <span className="inline-flex items-center gap-4">
-              <SiZomato className="w-10 h-10 text-white" />
+            <span className="inline-flex items-center gap-3">
+              <SiZomato className="w-7 h-7 text-white" />
               Order on Zomato
             </span>
           </button>

@@ -3,7 +3,6 @@ import HeroSection from "@/components/hero-section";
 import ProductShowcase from "@/components/product-showcase";
 import PartyOrders from "@/components/party-orders";
 import Footer from "@/components/footer";
-import StickyButtons from "@/components/sticky-buttons";
 
 export default function Home() {
   return (
@@ -12,8 +11,7 @@ export default function Home() {
       <HeroSection />
       <ProductShowcase />
       <PartyOrders />
-      <Footer />
-      <StickyButtons />
+  <Footer />
     </div>
   );
 }
